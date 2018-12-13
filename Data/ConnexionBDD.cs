@@ -12,7 +12,7 @@ namespace Projet.NET.Data
     {
         public static string dataSource = "localhost";
         public static string port = "3306";
-        public static string catalog = "";
+        public static string catalog = "SoutienScolaire";
         public static string user = "root";
         public static string password = "root";
 
