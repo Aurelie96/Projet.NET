@@ -32,7 +32,6 @@
             this.labelMotDePasse = new System.Windows.Forms.Label();
             this.txtLogin = new System.Windows.Forms.TextBox();
             this.txtMotDePasse = new System.Windows.Forms.TextBox();
-            this.retenirMdp = new System.Windows.Forms.CheckBox();
             this.btnConnexion = new System.Windows.Forms.Button();
             this.linkInscription = new System.Windows.Forms.LinkLabel();
             this.linkMdpOublie = new System.Windows.Forms.LinkLabel();
@@ -75,21 +74,10 @@
             this.txtMotDePasse.Size = new System.Drawing.Size(229, 22);
             this.txtMotDePasse.TabIndex = 3;
             // 
-            // retenirMdp
-            // 
-            this.retenirMdp.AutoSize = true;
-            this.retenirMdp.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.retenirMdp.Location = new System.Drawing.Point(44, 206);
-            this.retenirMdp.Name = "retenirMdp";
-            this.retenirMdp.Size = new System.Drawing.Size(367, 36);
-            this.retenirMdp.TabIndex = 4;
-            this.retenirMdp.Text = "Retenir mon mot de passe";
-            this.retenirMdp.UseVisualStyleBackColor = true;
-            // 
             // btnConnexion
             // 
             this.btnConnexion.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConnexion.Location = new System.Drawing.Point(50, 293);
+            this.btnConnexion.Location = new System.Drawing.Point(44, 224);
             this.btnConnexion.Name = "btnConnexion";
             this.btnConnexion.Size = new System.Drawing.Size(172, 57);
             this.btnConnexion.TabIndex = 5;
@@ -101,28 +89,30 @@
             // 
             this.linkInscription.AutoSize = true;
             this.linkInscription.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkInscription.Location = new System.Drawing.Point(39, 369);
+            this.linkInscription.Location = new System.Drawing.Point(39, 330);
             this.linkInscription.Name = "linkInscription";
             this.linkInscription.Size = new System.Drawing.Size(123, 29);
             this.linkInscription.TabIndex = 6;
             this.linkInscription.TabStop = true;
             this.linkInscription.Text = "Inscription";
+            this.linkInscription.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkInscription_LinkClicked);
             // 
             // linkMdpOublie
             // 
             this.linkMdpOublie.AutoSize = true;
             this.linkMdpOublie.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkMdpOublie.Location = new System.Drawing.Point(39, 434);
+            this.linkMdpOublie.Location = new System.Drawing.Point(39, 399);
             this.linkMdpOublie.Name = "linkMdpOublie";
             this.linkMdpOublie.Size = new System.Drawing.Size(231, 29);
             this.linkMdpOublie.TabIndex = 7;
             this.linkMdpOublie.TabStop = true;
             this.linkMdpOublie.Text = "Mot de passe oublié";
+            this.linkMdpOublie.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkMdpOublie_LinkClicked);
             // 
             // btnAnnule
             // 
             this.btnAnnule.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAnnule.Location = new System.Drawing.Point(335, 293);
+            this.btnAnnule.Location = new System.Drawing.Point(332, 224);
             this.btnAnnule.Name = "btnAnnule";
             this.btnAnnule.Size = new System.Drawing.Size(174, 57);
             this.btnAnnule.TabIndex = 8;
@@ -134,16 +124,17 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(567, 507);
+            this.ClientSize = new System.Drawing.Size(567, 464);
             this.Controls.Add(this.btnAnnule);
             this.Controls.Add(this.linkMdpOublie);
             this.Controls.Add(this.linkInscription);
             this.Controls.Add(this.btnConnexion);
-            this.Controls.Add(this.retenirMdp);
             this.Controls.Add(this.txtMotDePasse);
             this.Controls.Add(this.txtLogin);
             this.Controls.Add(this.labelMotDePasse);
             this.Controls.Add(this.labelLogin);
+            this.Name = "Connexion";
+            this.Load += new System.EventHandler(this.Connexion_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -155,7 +146,6 @@
         private System.Windows.Forms.Label labelMotDePasse;
         private System.Windows.Forms.TextBox txtLogin;
         private System.Windows.Forms.TextBox txtMotDePasse;
-        private System.Windows.Forms.CheckBox retenirMdp;
         private System.Windows.Forms.Button btnConnexion;
         private System.Windows.Forms.LinkLabel linkInscription;
         private System.Windows.Forms.LinkLabel linkMdpOublie;

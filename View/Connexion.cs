@@ -45,5 +45,22 @@ namespace Projet.NET
                 MessageBox.Show("Votre mot de passe ou login est incorrect");
             }
         }
+
+        private void Connexion_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void linkInscription_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Inscription inscription = new Inscription();
+            inscription.Hide();
+            inscription.ShowDialog();
+        }
+
+        private void linkMdpOublie_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+        }
     }
 }
