@@ -88,5 +88,27 @@ namespace Projet.NET.Controleur
             }
             return test;
         }
+
+        public static int RecuperationIdNiveaux(string nom)
+        {
+            int test = 0;
+            try
+            {
+                MySqlDataReader reader;
+                reader = connexion.execRead("SELECT " +
+                    "idNiveau " +
+                    $"from Niveaux WHERE nomNiveau = '{nom}'");
+                if(reader.Read())
+                {
+                    test = reader.GetInt32(0);
+                }
+                reader.Close();
+            }
+            catch (MySqlException e)
+            {
+                Console.WriteLine(e);
+            }
+            return test;
+        }
     }
 }

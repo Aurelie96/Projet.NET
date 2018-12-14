@@ -14,7 +14,7 @@ namespace Projet.NET.Data
         public static string port = "3306";
         public static string catalog = "SoutienScolaire";
         public static string user = "root";
-        public static string password = "root";
+        public static string password = "";
 
         public MySqlDataReader execRead(String requete)
         {

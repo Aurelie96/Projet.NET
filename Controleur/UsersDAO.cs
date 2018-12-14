@@ -3,6 +3,7 @@ using Projet.NET.Data;
 using Projet.NET.Model;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlTypes;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,10 +24,11 @@ namespace Projet.NET.Controleur
                     "nomUser," +
                     "prenomUser," +
                     "loginUser," +
-                    "passwordUser," +
+                    "mdpUser," +
                     "emailUser," +
                     "tuteurUser," +
-                    "eleveUser from Users");
+                    "eleveUser, " +
+                    "idNiveau from Users");
                 while (reader.Read())
                 {
                     Users u = new Users(
@@ -36,8 +38,9 @@ namespace Projet.NET.Controleur
                         reader.GetString(3),
                         reader.GetString(4),
                         reader.GetString(5),
-                        reader.GetBoolean(6),
-                        reader.GetBoolean(7));
+                        reader.GetInt32(6),
+                        reader.GetInt32(7),
+                        reader.GetInt32(8));
                     lesUsers.Add(u);
                 }
                 reader.Close();
@@ -54,8 +57,8 @@ namespace Projet.NET.Controleur
             try
             {
                 connexion.execWrite("INSERT INTO Users" +
-                    "(nomUser, prenomUser, loginUser, passwordUser" +
-                    ", emailUser, tuteurUser, eleveUser) " +
+                    "(nomUser, prenomUser, loginUser, mdpUser" +
+                    ", emailUser, tuteurUser, eleveUser, idNiveau) " +
                     "VALUES ('"
                     + user.nomUser + "', '"
                     + user.prenomUser + "', '"
@@ -63,7 +66,8 @@ namespace Projet.NET.Controleur
                     + user.passwordUser + "', '"
                     + user.emailUser + "', '"
                     + user.tuteurUser + "', '"
-                    + user.eleveUser + "');");
+                    + user.eleveUser + "', '"
+                    + user.idNiveaux+"');");
                 test = true;
             }
             catch (MySqlException e)
@@ -82,10 +86,11 @@ namespace Projet.NET.Controleur
                     " nomUser = '" + user.nomUser + "'," +
                     " prenomUser = '" + user.prenomUser + "', " +
                     " loginUser = '" + user.loginUser + "', " +
-                    " passwordUser = '" + user.passwordUser + "', " +
+                    " mdpUser = '" + user.passwordUser + "', " +
                     " emailUser = '" + user.emailUser + "', " +
                     " tuteurUser = '" + user.tuteurUser + "', " +
-                    " eleveUser = '" + user.eleveUser + "'" +
+                    " eleveUser = '" + user.eleveUser + "', " +
+                    " idNiveau = '" + user.idNiveaux + "'" +
                     " WHERE idUser = '" + user.idUser + "' ;");
                 test = true;
             }
@@ -112,5 +117,8 @@ namespace Projet.NET.Controleur
             }
             return test;
         }
+
     }
+
+
 }
