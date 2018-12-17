@@ -117,7 +117,29 @@ namespace Projet.NET.Controleur
             }
             return test;
         }
+<<<<<<< HEAD
 
+=======
+        public static bool Connexion(string login, string password)
+        {
+            bool test = false;
+            try
+            {
+                MySqlDataReader reader;
+                reader = connexion.execRead($"SELECT * FROM Users WHERE loginuser = '{login}' AND mdpUser = '{password}';");
+                if (reader.Read())
+                {
+                    test = true;
+                }
+            }
+            catch(MySqlException e)
+            {
+                Console.WriteLine(e);
+                test = false;
+            }
+            return test;
+        }
+>>>>>>> master
     }
 
 

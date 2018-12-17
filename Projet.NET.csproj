@@ -98,9 +98,12 @@
     <EmbeddedResource Include="View\Connexion.resx">
       <DependentUpon>Connexion.cs</DependentUpon>
     </EmbeddedResource>
+<<<<<<< HEAD
     <EmbeddedResource Include="View\Inscription.resx">
       <DependentUpon>Inscription.cs</DependentUpon>
     </EmbeddedResource>
+=======
+>>>>>>> master
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

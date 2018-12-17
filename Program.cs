@@ -17,7 +17,11 @@ namespace Projet.NET
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+<<<<<<< HEAD
             Application.Run(new Inscription());
+=======
+            Application.Run(new Connexion());
+>>>>>>> master
         }
     }
 }
