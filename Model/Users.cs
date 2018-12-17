@@ -14,11 +14,12 @@ namespace Projet.NET.Model
         public string loginUser { get; set; }
         public string passwordUser { get; set; }
         public string emailUser { get; set; }
-        public bool tuteurUser { get; set; }
-        public bool eleveUser { get; set; }
+        public int tuteurUser { get; set; }
+        public int eleveUser { get; set; }
+        public int idNiveaux { get; set; }
 
         public Users(int id, string nom, string prenom, string login,
-            string password, string email, bool tuteur, bool eleve)
+            string password, string email, int tuteur, int eleve, int idNiv)
         {
             this.idUser = id;
             this.nomUser = nom;
@@ -28,6 +29,20 @@ namespace Projet.NET.Model
             this.emailUser = email;
             this.tuteurUser = tuteur;
             this.eleveUser = eleve;
+            this.idNiveaux = idNiv;
+        }
+
+        public Users(string nom, string prenom, string login,
+            string password, string email, int tuteur, int eleve, int idNiv)
+        {
+            this.nomUser = nom;
+            this.prenomUser = prenom;
+            this.loginUser = login;
+            this.passwordUser = password;
+            this.emailUser = email;
+            this.tuteurUser = tuteur;
+            this.eleveUser = eleve;
+            this.idNiveaux = idNiv;
         }
     }
 }
