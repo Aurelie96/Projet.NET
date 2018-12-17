@@ -98,6 +98,9 @@
     <EmbeddedResource Include="View\Connexion.resx">
       <DependentUpon>Connexion.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\Inscription.fr.resx">
+      <DependentUpon>Inscription.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Inscription.resx">
       <DependentUpon>Inscription.cs</DependentUpon>
     </EmbeddedResource>
