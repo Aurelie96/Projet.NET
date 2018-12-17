@@ -111,6 +111,7 @@
             this.linkInscription.TabIndex = 6;
             this.linkInscription.TabStop = true;
             this.linkInscription.Text = "Inscription";
+            this.linkInscription.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkInscription_LinkClicked);
             // 
             // linkMdpOublie
             // 
@@ -155,6 +156,7 @@
             this.Controls.Add(this.txtLogin);
             this.Controls.Add(this.labelMotDePasse);
             this.Controls.Add(this.labelLogin);
+            this.Name = "Connexion";
             this.ResumeLayout(false);
             this.PerformLayout();
 >>>>>>> master

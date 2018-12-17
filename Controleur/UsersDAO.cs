@@ -67,7 +67,11 @@ namespace Projet.NET.Controleur
                     + user.emailUser + "', '"
                     + user.tuteurUser + "', '"
                     + user.eleveUser + "', '"
+<<<<<<< HEAD
                     + user.idNiveaux+"');");
+=======
+                    + user.idNiveaux + "');");
+>>>>>>> master
                 test = true;
             }
             catch (MySqlException e)
