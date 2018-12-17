@@ -23,8 +23,10 @@ namespace Projet.NET.View
 
         private void linkToConnexion_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+            ActiveForm.Close();
             Connexion c = new Connexion();
             c.ShowDialog();
+            
         }
 
         private void btnInscrire_Click(object sender, EventArgs e)
