@@ -23,6 +23,7 @@ namespace Projet.NET.View
 
         private void linkToConnexion_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+            ActiveForm.Close();
             Connexion c = new Connexion();
             c.ShowDialog();
         }
@@ -41,7 +42,8 @@ namespace Projet.NET.View
             {
                 Users u = new Users(txtNom.Text, txtPrenom.Text, txtPseudo.Text, txtPwd.Text, txtEmail.Text, Convert.ToInt32(checkBox1.Checked), Convert.ToInt32(checkBox2.Checked), cbxLevels.SelectedIndex + 1);
                 UsersDAO.CreerUser(u);
-                Accueil a = new Accueil();
+                ActiveForm.Close();
+                Accueil a = new Accueil(u);
                 a.ShowDialog();
             }
             else

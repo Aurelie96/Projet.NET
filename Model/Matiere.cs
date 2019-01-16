@@ -16,5 +16,13 @@ namespace Projet.NET.Model
             this.idMatiere = id;
             this.nomMatiere = nom;
         }
+        public Matiere(string nom)
+        {
+            this.nomMatiere = nom;
+        }
+        public Matiere(int id)
+        {
+            this.idMatiere = id;
+        }
     }
 }

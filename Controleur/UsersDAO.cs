@@ -50,6 +50,70 @@ namespace Projet.NET.Controleur
             }
             return lesUsers;
         }
+
+        public static int ChargerIdUser(Users user)
+        {
+            int i = 0;
+            try
+            {
+                MySqlDataReader reader;
+                reader = connexion.execRead("SELECT " +
+                    "idUser from Users" +
+                    $" WHERE loginUser = '{user.loginUser}'");
+                while (reader.Read())
+                {
+                    i = reader.GetInt32(0);
+                }
+                reader.Close();
+            }
+            catch (MySqlException e)
+            {
+                Console.WriteLine(e);
+            }
+            return i;
+        }
+        public static Users ChargerLoginUser(int idUser)
+        {
+            Users i = new Users(idUser);
+            try
+            {
+                MySqlDataReader reader;
+                reader = connexion.execRead("SELECT " +
+                    "loginUser from Users" +
+                    $" WHERE idUser = '{idUser}'");
+                while (reader.Read())
+                {
+                    i = new Users(reader.GetString(0));
+                }
+                reader.Close();
+            }
+            catch (MySqlException e)
+            {
+                Console.WriteLine(e);
+            }
+            return i;
+        }
+        public static int ChargerIdNiveauxParUser(Users user)
+        {
+            int i = 0;
+            try
+            {
+                MySqlDataReader reader;
+                reader = connexion.execRead("SELECT " +
+                    "idNiveau from Users" +
+                    $" WHERE loginUser = '{user.loginUser}'");
+                while (reader.Read())
+                {
+                    i = reader.GetInt32(0);
+                }
+                reader.Close();
+            }
+            catch (MySqlException e)
+            {
+                Console.WriteLine(e);
+            }
+            return i;
+        }
         public static Boolean CreerUser(Users user)
         {
             Boolean test = false;
@@ -134,6 +198,45 @@ namespace Projet.NET.Controleur
                 test = false;
             }
             return test;
+        }
+        public static string RecuperationMail(string login)
+        {
+            string resultat = "";
+            try
+            {
+                MySqlDataReader reader;
+                reader = connexion.execRead($"SELECT emailUser from Users WHERE loginUser = '{login}'");
+                if (reader.Read())
+                {
+                    resultat = reader.GetString(0);
+                }
+                reader.Close();
+            }
+            catch (MySqlException e)
+            {
+                Console.WriteLine(e);
+            }
+            return resultat;
+        }
+
+        public static string RecuperationMdp(string login)
+        {
+            string mdp = "";
+            try
+            {
+                MySqlDataReader reader;
+                reader = connexion.execRead($"SELECT mdpUser from Users WHERE loginUser = '{login}'");
+                if (reader.Read())
+                {
+                    mdp = reader.GetString(0);
+                }
+                reader.Close();
+            }
+            catch (MySqlException e)
+            {
+                Console.WriteLine(e);
+            }
+            return mdp;
         }
     }
 }

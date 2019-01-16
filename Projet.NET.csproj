@@ -38,6 +38,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Messaging" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -51,19 +52,27 @@
   <ItemGroup>
     <Compile Include="Controleur\ComposerDAO.cs" />
     <Compile Include="Controleur\MatiereDAO.cs" />
-    <Compile Include="Controleur\MessageDAO.cs" />
+    <Compile Include="Controleur\EnvoyerDAO.cs" />
     <Compile Include="Controleur\NiveauxDAO.cs" />
+    <Compile Include="Controleur\RepondreDAO.cs" />
     <Compile Include="Controleur\UsersDAO.cs" />
     <Compile Include="Data\ConnexionBDD.cs" />
     <Compile Include="Model\Composer.cs" />
     <Compile Include="Model\Matiere.cs" />
-    <Compile Include="Model\Message.cs" />
+    <Compile Include="Model\Envoyer.cs" />
     <Compile Include="Model\Niveaux.cs" />
+    <Compile Include="Model\Repondre.cs" />
     <Compile Include="View\Accueil.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\Accueil.Designer.cs">
       <DependentUpon>Accueil.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\AjoutQuestion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\AjoutQuestion.Designer.cs">
+      <DependentUpon>AjoutQuestion.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Connexion.cs">
       <SubType>Form</SubType>
@@ -86,6 +95,12 @@
     <Compile Include="View\Inscription.Designer.cs">
       <DependentUpon>Inscription.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\RepondreQuestion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\RepondreQuestion.Designer.cs">
+      <DependentUpon>RepondreQuestion.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -95,11 +110,23 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="View\Accueil.resx">
+      <DependentUpon>Accueil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\AjoutQuestion.resx">
+      <DependentUpon>AjoutQuestion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Connexion.resx">
       <DependentUpon>Connexion.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\Forum.resx">
+      <DependentUpon>Forum.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Inscription.resx">
       <DependentUpon>Inscription.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\RepondreQuestion.resx">
+      <DependentUpon>RepondreQuestion.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

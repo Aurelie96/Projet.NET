@@ -33,3 +33,7 @@ D:\Projet.NET\Projet.NET\obj\Debug\Projet.NET.csproj.CopyComplete
 D:\Projet.NET\Projet.NET\obj\Debug\Projet.NET.exe
 D:\Projet.NET\Projet.NET\obj\Debug\Projet.NET.pdb
 D:\Projet.NET\Projet.NET\obj\Debug\Projet.NET.View.Inscription.resources
+D:\Projet.NET\Projet.NET\obj\Debug\Projet.NET.View.Accueil.resources
+D:\Projet.NET\Projet.NET\obj\Debug\Projet.NET.View.Forum.resources
+D:\Projet.NET\Projet.NET\obj\Debug\Projet.NET.View.AjoutQuestion.resources
+D:\Projet.NET\Projet.NET\obj\Debug\Projet.NET.View.RepondreQuestion.resources

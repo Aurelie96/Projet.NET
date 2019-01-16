@@ -9,25 +9,27 @@ using System.Threading.Tasks;
 
 namespace Projet.NET.Controleur
 {
-    class ComposerDAO
+    public class RepondreDAO
     {
         private static ConnexionBDD connexion = new ConnexionBDD();
-        public static List<Composer> ChargerComposer()
+        public static List<Repondre> ChargerRepondre(Envoyer envoyer)
         {
-            List<Composer> lesComposers = new List<Composer>();
+            List<Repondre> lesReponses = new List<Repondre>();
             try
             {
                 MySqlDataReader reader;
                 reader = connexion.execRead("SELECT " +
-                    "idMatiere," +
-                    "idNiveau from Composer");
+                    "idReponse," +
+                    "texteReponse," +
+                    "idMessage from Reponse " +
+                    $"WHERE idMessage = '{envoyer.idMessage}'");
                 while (reader.Read())
                 {
-                    Composer m = new Composer(
+                    Repondre r = new Repondre(
                         reader.GetInt32(0),
-                        reader.GetInt32(4),
-                        reader.GetInt32(5));
-                    lesComposers.Add(m);
+                        reader.GetString(1),
+                        reader.GetInt32(2));
+                    lesReponses.Add(r);
                 }
                 reader.Close();
             }
@@ -35,18 +37,18 @@ namespace Projet.NET.Controleur
             {
                 Console.WriteLine(e);
             }
-            return lesComposers;
+            return lesReponses;
         }
-        public static Boolean CreerComposer(Composer composer)
+        public static Boolean CreerReponse(Repondre repondre)
         {
             Boolean test = false;
             try
             {
-                connexion.execWrite("INSERT INTO Composer" +
-                    "(idMatiere, idNiveaux) " +
+                connexion.execWrite("INSERT INTO Reponse" +
+                    "(texteReponse, idMessage) " +
                     "VALUES ('"
-                    + composer.idMatiere + "', '"
-                    + composer.idNiveaux + "');");
+                    + repondre.texteReponse + "', '"
+                    + repondre.idMessage + "');");
                 test = true;
             }
             catch (MySqlException e)

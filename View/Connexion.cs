@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using Projet.NET.Controleur;
 using Projet.NET.View;
+using Projet.NET.Model;
+using System.Net.Mail;
 
 namespace Projet.NET
 {
@@ -20,23 +22,15 @@ namespace Projet.NET
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnAnnule_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void btnConnexion_Click(object sender, EventArgs e)
+        private void BtnConnexion_Click_1(object sender, EventArgs e)
         {
             bool test = false;
             test = UsersDAO.Connexion(txtLogin.Text, txtMotDePasse.Text);
-            if(test == true)
+            Users user = new Users(txtLogin.Text, txtMotDePasse.Text);
+            if (test == true)
             {
-                Accueil accueil = new Accueil();
+                //ActiveForm.Visible = false;
+                Accueil accueil = new Accueil(user);
                 accueil.Hide();
                 accueil.Show();
             }
@@ -46,11 +40,41 @@ namespace Projet.NET
             }
         }
 
-        private void linkInscription_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void BtnAnnule_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void LinkInscription_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Inscription inscrire = new Inscription();
             inscrire.Hide();
             inscrire.Show();
+        }
+
+        private void LinkMdpOublie_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            string user = UsersDAO.RecuperationMail(txtLogin.Text);
+            string motdepass = UsersDAO.RecuperationMdp(txtLogin.Text);
+            MailMessage email = new MailMessage();
+            email.From = new System.Net.Mail.MailAddress("soutienscolaireril2017@gmail.com");
+            email.To.Add(new MailAddress(user));
+            email.IsBodyHtml = true;
+            email.Subject = "soutien_2018";
+            email.Body = " Ce message vous est envoyé car vous avez perdu ou oublié votre mot de passe. Si ne n'est pas le cas, veuillez ne pas tenir compte de ce message. <br /> <b>Votre mot de passe: " + motdepass + "</b>";
+            System.Net.Mail.SmtpClient smtp = new System.Net.Mail.SmtpClient();
+            smtp.Host = "smtp.gmail.com";
+            smtp.Credentials = new System.Net.NetworkCredential("soutienscolaireril2017", "soutien_2018");
+            smtp.EnableSsl = true;
+            try
+            {
+                smtp.Send(email);
+                MessageBox.Show("email est envoyé");
+            }
+            catch (SmtpException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

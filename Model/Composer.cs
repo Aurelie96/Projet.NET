@@ -8,13 +8,15 @@ namespace Projet.NET.Model
 {
     public class Composer
     {
+        public int idComposer { get; set; }
         public int idMatiere { get; set; }
-        public int idNiveau { get; set; }
+        public int idNiveaux { get; set; }
 
-        public Composer(int idM, int idN)
+        public Composer(int id,  int idMat, int idNiv)
         {
-            this.idMatiere = idM;
-            this.idNiveau = idN;
+            this.idComposer = id;
+            this.idMatiere = idMat;
+            this.idNiveaux = idNiv;
         }
     }
 }

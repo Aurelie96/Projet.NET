@@ -20,7 +20,7 @@ namespace Projet.NET.Controleur
                 MySqlDataReader reader;
                 reader = connexion.execRead("SELECT " +
                     "idMatiere," +
-                    "nomMatiere from Matieres");
+                    "nomMatiere from Matieres;");
                 while (reader.Read())
                 {
                     Matiere m = new Matiere(
@@ -35,6 +35,58 @@ namespace Projet.NET.Controleur
                 Console.WriteLine(e);
             }
             return lesMatieres;
+        }
+        public static Matiere ChargerMatiereParIdMatiere(int idmatiere)
+        {
+            Matiere lesMatieres = new Matiere(idmatiere);
+            try
+            {
+                MySqlDataReader reader;
+                reader = connexion.execRead("SELECT " +
+                    "idMatiere," +
+                    "nomMatiere from Matieres " +
+                    $"WHERE idMatiere = '{idmatiere}';");
+                if (reader.Read())
+                {
+                    lesMatieres = new Matiere(
+                        reader.GetInt32(0),
+                        reader.GetString(1));
+                }
+                reader.Close();
+            }
+            catch (MySqlException e)
+            {
+                Console.WriteLine(e);
+            }
+            return lesMatieres;
+        }
+
+        public static List<Matiere> ChargerNomMatiereParUser(Users users)
+        {
+            List<Matiere> lesMatieresUser = new List<Matiere>();
+            try
+            {
+                MySqlDataReader reader;
+                reader = connexion.execRead("SELECT " +
+                    "M.nomMatiere " +
+                    "FROM users U " +
+                    "inner JOIN niveaux N ON N.idNiveau = U.idNiveau " +
+                    "INNER JOIN composer C ON C.idNiveau = N.idNiveau " +
+                    "INNER JOIN matieres M ON M.idMatiere = C.idMatiere " +
+                    $"WHERE U.loginuser = '{users.loginUser}';");
+                while (reader.Read())
+                {
+                    Matiere m = new Matiere(
+                        reader.GetString(0));
+                    lesMatieresUser.Add(m);
+                }
+                reader.Close();
+            }
+            catch (MySqlException e)
+            {
+                Console.WriteLine(e);
+            }
+            return lesMatieresUser;
         }
         public static Boolean CreerMatiere(Matiere matiere)
         {
@@ -87,6 +139,27 @@ namespace Projet.NET.Controleur
                 test = false;
             }
             return test;
+        }
+
+        public static int RecuperationIdMatiere(string matiere)
+        {
+            int i = 0;
+            try
+            {
+                MySqlDataReader reader;
+                reader = connexion.execRead("SELECT idMatiere" +
+                    $" FROM matieres WHERE nomMatiere = '{matiere}';");
+                if (reader.Read())
+                {
+                    i = reader.GetInt32(0);
+                }
+                reader.Close();
+            }
+            catch (MySqlException e)
+            {
+                Console.WriteLine(e);
+            }
+            return i;
         }
     }
 }

@@ -44,5 +44,18 @@ namespace Projet.NET.Model
             this.eleveUser = eleve;
             this.idNiveaux = idNiv;
         }
+        public Users(string login, string password)
+        {
+            this.loginUser = login;
+            this.passwordUser = password;
+        }
+        public Users(string login)
+        {
+            this.loginUser = login;
+        }
+        public Users(int id)
+        {
+            this.idUser = id;
+        }
     }
 }

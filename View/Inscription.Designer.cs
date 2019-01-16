@@ -69,6 +69,7 @@
             // 
             // btnInscrire
             // 
+            this.btnInscrire.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnInscrire.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInscrire.Location = new System.Drawing.Point(31, 327);
             this.btnInscrire.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -76,11 +77,12 @@
             this.btnInscrire.Size = new System.Drawing.Size(290, 52);
             this.btnInscrire.TabIndex = 2;
             this.btnInscrire.Text = "&S\'inscrire";
-            this.btnInscrire.UseVisualStyleBackColor = true;
+            this.btnInscrire.UseVisualStyleBackColor = false;
             this.btnInscrire.Click += new System.EventHandler(this.btnInscrire_Click);
             // 
             // button2
             // 
+            this.button2.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.Location = new System.Drawing.Point(1013, 327);
             this.button2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -88,7 +90,7 @@
             this.button2.Size = new System.Drawing.Size(121, 52);
             this.button2.TabIndex = 3;
             this.button2.Text = "&Fermer";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // label2
@@ -170,6 +172,7 @@
             this.cbxLevels.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbxLevels.Name = "cbxLevels";
             this.cbxLevels.Size = new System.Drawing.Size(340, 28);
+            this.cbxLevels.TabIndex = 19;
             // 
             // checkBox2
             // 
@@ -229,6 +232,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(1182, 414);
             this.Controls.Add(this.linkToConnexion);
             this.Controls.Add(this.label7);
@@ -248,9 +252,11 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtNom);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Inscription";
             this.Text = "VOTRE INSCRIPTION";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Inscription_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
