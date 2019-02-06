@@ -25,7 +25,7 @@ namespace Projet.NET.Controleur
                     "dateEnvoieMessage, " +
                     "idUser, " +
                     "idMatiere, " +
-                    "idNiveau from Messages " +
+                    "idNiveau from message " +
                     $"WHERE objetMessage = '{objet}' " +
                     $"AND texteMessage = '{texte}' ;");
                 if (reader.Read())
@@ -60,7 +60,7 @@ namespace Projet.NET.Controleur
                     "dateEnvoieMessage, " +
                     "idUser, " +
                     "idMatiere, " +
-                    "idNiveau from Messages " +
+                    "idNiveau from message " +
                     $"WHERE idUser = '{user}' " +
                     $"AND idMatiere = '{matiere}' ");
                 while (reader.Read())
@@ -96,7 +96,7 @@ namespace Projet.NET.Controleur
                     "dateEnvoieMessage, " +
                     "idUser, " +
                     "idMatiere, " +
-                    "idNiveau from Messages " +
+                    "idNiveau from message " +
                     $"WHERE idMessage = '{envoyer.idMessage}' ");
                 if (reader.Read())
                 {
@@ -122,7 +122,7 @@ namespace Projet.NET.Controleur
             Boolean test = false;
             try
             {
-                connexion.execWrite("INSERT INTO Messages" +
+                connexion.execWrite("INSERT INTO message" +
                     "(objetMessage, texteMessage, dateEnvoieMessage, idUser, idMatiere, idNiveau) " +
                     "VALUES ('"
                     + message.objetMessage + "', '"
@@ -145,7 +145,7 @@ namespace Projet.NET.Controleur
             Boolean test = false;
             try
             {
-                connexion.execWrite("UPDATE Message SET " +
+                connexion.execWrite("UPDATE message SET " +
                     " objetMessage = '" + message.objetMessage + "'," +
                     " texteMessage = '" + message.texteMessage + "', " +
                     " dateEnvoieMessage = '" + message.dateEnvoieMessage + "', " +
@@ -167,7 +167,7 @@ namespace Projet.NET.Controleur
             bool test = false;
             try
             {
-                connexion.execWrite("DELETE FROM Message WHERE idMessage = "
+                connexion.execWrite("DELETE FROM message WHERE idMessage = "
                     + message.idMessage + " ;");
                 test = true;
             }

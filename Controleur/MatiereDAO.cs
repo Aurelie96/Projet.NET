@@ -44,7 +44,7 @@ namespace Projet.NET.Controleur
                 MySqlDataReader reader;
                 reader = connexion.execRead("SELECT " +
                     "idMatiere," +
-                    "nomMatiere from Matieres " +
+                    "nomMatiere from matiere " +
                     $"WHERE idMatiere = '{idmatiere}';");
                 if (reader.Read())
                 {
@@ -72,7 +72,7 @@ namespace Projet.NET.Controleur
                     "FROM users U " +
                     "inner JOIN niveaux N ON N.idNiveau = U.idNiveau " +
                     "INNER JOIN composer C ON C.idNiveau = N.idNiveau " +
-                    "INNER JOIN matieres M ON M.idMatiere = C.idMatiere " +
+                    "INNER JOIN matiere M ON M.idMatiere = C.idMatiere " +
                     $"WHERE U.loginuser = '{users.loginUser}';");
                 while (reader.Read())
                 {
@@ -93,7 +93,7 @@ namespace Projet.NET.Controleur
             Boolean test = false;
             try
             {
-                connexion.execWrite("INSERT INTO Matieres" +
+                connexion.execWrite("INSERT INTO matiere" +
                     "(idMatiere, nomMatiere) " +
                     "VALUES ('"
                     + matiere.idMatiere + "', '"
@@ -112,7 +112,7 @@ namespace Projet.NET.Controleur
             Boolean test = false;
             try
             {
-                connexion.execWrite("UPDATE Matieres SET " +
+                connexion.execWrite("UPDATE matiere SET " +
                     " nomMatiere = '" + matiere.nomMatiere + "' " +
                     "  WHERE idMatiere = '" + matiere.idMatiere + "' ;");
                 test = true;
@@ -129,7 +129,7 @@ namespace Projet.NET.Controleur
             bool test = false;
             try
             {
-                connexion.execWrite("DELETE FROM Matieres WHERE idMatiere = "
+                connexion.execWrite("DELETE FROM matiere WHERE idMatiere = "
                     + matiere.idMatiere + " ;");
                 test = true;
             }
@@ -148,7 +148,7 @@ namespace Projet.NET.Controleur
             {
                 MySqlDataReader reader;
                 reader = connexion.execRead("SELECT idMatiere" +
-                    $" FROM matieres WHERE nomMatiere = '{matiere}';");
+                    $" FROM matiere WHERE nomMatiere = '{matiere}';");
                 if (reader.Read())
                 {
                     i = reader.GetInt32(0);
