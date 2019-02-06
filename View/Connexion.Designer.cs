@@ -58,6 +58,7 @@
             // 
             resources.ApplyResources(this.txtMotDePasse, "txtMotDePasse");
             this.txtMotDePasse.Name = "txtMotDePasse";
+            this.txtMotDePasse.UseSystemPasswordChar = true;
             // 
             // BtnConnexion
             // 
