@@ -21,6 +21,8 @@ namespace Projet.NET.View
             Lbl_Login.Text = users;
         }
 
+        /*BtnAjouter_Click
+         Permet d'ajouter une question*/
         private void BtnAjouter_Click(object sender, EventArgs e)
         {
             Users use = new Users(Lbl_Login.Text);
@@ -45,7 +47,8 @@ namespace Projet.NET.View
                 MessageBox.Show("Le message n'a pas été envoyé");
             }
         }
-
+        /*BtnAnnuler_Click
+         Permet de retourner sur la page Forum*/
         private void BtnAnnuler_Click(object sender, EventArgs e)
         {
             Users user = new Users(Lbl_Login.Text);

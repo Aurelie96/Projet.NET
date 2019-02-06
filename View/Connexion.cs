@@ -21,7 +21,8 @@ namespace Projet.NET
         {
             InitializeComponent();
         }
-
+        /*BtnConnexion_Click_1
+         Permet de ce connecter et d'ouvrir la view Accueil*/
         private void BtnConnexion_Click_1(object sender, EventArgs e)
         {
             bool test = false;
@@ -39,19 +40,22 @@ namespace Projet.NET
                 MessageBox.Show("Votre mot de passe ou login est incorrect");
             }
         }
-
+        /*BtnAnnule_Click_1
+         Permet de fermer l'application*/
         private void BtnAnnule_Click_1(object sender, EventArgs e)
         {
             this.Close();
         }
-
+        /*LinkInscription_LinkClicked_1
+         Permet d'aler sur la view Inscription*/
         private void LinkInscription_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Inscription inscrire = new Inscription();
             inscrire.Hide();
             inscrire.Show();
         }
-
+        /*LinkMdpOublie_LinkClicked
+         Permet d'envoyer un mail pour donner son mot de passe*/
         private void LinkMdpOublie_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             string user = UsersDAO.RecuperationMail(txtLogin.Text);

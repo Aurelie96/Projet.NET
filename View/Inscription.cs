@@ -20,14 +20,16 @@ namespace Projet.NET.View
         {
             InitializeComponent();
         }
-
+        /*linkToConnexion_LinkClicked
+         Permet de retourner sur la view Connexion*/
         private void linkToConnexion_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             ActiveForm.Close();
             Connexion c = new Connexion();
             c.ShowDialog();
         }
-
+        /*btnInscrire_Click
+         Permet de creer un nouveaux utilisateurs*/
         private void btnInscrire_Click(object sender, EventArgs e)
         {
             //int i = Convert.ToInt32(checkBox1.Checked);
@@ -51,12 +53,14 @@ namespace Projet.NET.View
                 MessageBox.Show("Veuillez renseigner tous les champs", "Erreur formulaire", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
+        /*button2_Click
+         Permet de fermer la page inscription*/
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
+        /*Inscription_Load
+         Permet de mettre tout les niveaux dans une liste*/
         private void Inscription_Load(object sender, EventArgs e)
         {
             List<Niveaux> lstNiveaux = NiveauxDAO.ChargerNiveaux();

@@ -12,6 +12,8 @@ namespace Projet.NET.Controleur
     public class UsersDAO
     {
         private static ConnexionBDD connexion = new ConnexionBDD();
+        /*La méthode ChargerUser permet de récupérer tout les user
+         et de les mettre dans une List<Users>*/
         public static List<Users> ChargerUser()
         {
             List<Users> lesUsers = new List<Users>();
@@ -50,7 +52,9 @@ namespace Projet.NET.Controleur
             }
             return lesUsers;
         }
-
+        /*La méthode ChargerIdUser permet de récupérer le user
+         * par rapport a un login
+         et de les mettre dans un int*/
         public static int ChargerIdUser(Users user)
         {
             int i = 0;
@@ -72,6 +76,9 @@ namespace Projet.NET.Controleur
             }
             return i;
         }
+        /*La méthode ChargerLoginUser permet de récupérer le user
+         * par rapport a un idUser
+         et de les mettre dans un Users*/
         public static Users ChargerLoginUser(int idUser)
         {
             Users i = new Users(idUser);
@@ -93,6 +100,10 @@ namespace Projet.NET.Controleur
             }
             return i;
         }
+        /*La méthode ChargerIdNiveauxParUser permet de récupérer 
+         l'idNiveau du user
+         par rapport a un login
+         et de les mettre dans un int*/
         public static int ChargerIdNiveauxParUser(Users user)
         {
             int i = 0;
@@ -114,6 +125,9 @@ namespace Projet.NET.Controleur
             }
             return i;
         }
+        /*La méthode CreerUser permet de créer un champ
+         dans la table Users et de retourner un Boolean 
+         pour dire si la ligne a bien été inséré*/
         public static Boolean CreerUser(Users user)
         {
             Boolean test = false;
@@ -140,6 +154,10 @@ namespace Projet.NET.Controleur
             }
             return test;
         }
+        /*La méthode ModifierUser reçoit un type Users
+         Elle vas faire une mise à jour d'un user 
+         et de retourner un Boolean 
+         pour dire si la ligne a bien été inséré*/
         public static Boolean ModifierUser(Users user)
         {
             Boolean test = false;
@@ -164,6 +182,9 @@ namespace Projet.NET.Controleur
             }
             return test;
         }
+        /*La méthode SupprimerUser reçoit un type Users
+         Elle vas supprimer un user
+         et retourne un Boolean pour dire si la ligne a bien été inséré*/
         public static Boolean SupprimerUser(Users user)
         {
             bool test = false;
@@ -180,6 +201,9 @@ namespace Projet.NET.Controleur
             }
             return test;
         }
+        /*La méthode Connexion reçoit deux string
+         Elle vas permettre de vérifier que le login et mdp 
+         correspond a un user*/
         public static bool Connexion(string login, string password)
         {
             bool test = false;
@@ -199,6 +223,8 @@ namespace Projet.NET.Controleur
             }
             return test;
         }
+        /*La méthode RecuperationMail reçoit un string de login 
+         et retourn l'adresse mail de l'utilisateur*/
         public static string RecuperationMail(string login)
         {
             string resultat = "";
@@ -218,7 +244,8 @@ namespace Projet.NET.Controleur
             }
             return resultat;
         }
-
+        /*La méthode RecuperationMdp reçoit un string 
+         et retourn le mot de passe de l'utilisateur*/
         public static string RecuperationMdp(string login)
         {
             string mdp = "";

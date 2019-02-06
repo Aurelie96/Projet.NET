@@ -12,6 +12,8 @@ namespace Projet.NET.Controleur
     public class NiveauxDAO
     {
         private static ConnexionBDD connexion = new ConnexionBDD();
+        /*La méthode ChargerNiveaux permet de récupérer tout les niveaux
+         et de les mettre dans une List<Niveau>*/
         public static List<Niveaux> ChargerNiveaux()
         {
             List<Niveaux> lesNiveaux = new List<Niveaux>();
@@ -36,6 +38,9 @@ namespace Projet.NET.Controleur
             }
             return lesNiveaux;
         }
+        /*La méthode CreerNiveaux permet de créer un champ
+         dans la table Niveaux et de retourner un Boolean 
+         pour dire si la ligne a bien été inséré*/
         public static Boolean CreerNiveaux(Niveaux niveaux)
         {
             Boolean test = false;
@@ -55,6 +60,10 @@ namespace Projet.NET.Controleur
             }
             return test;
         }
+        /*La méthode ModifierNiveaux reçoit un type Niveaux
+         Elle vas faire une mise à jour d'une niveaux 
+         et de retourner un Boolean 
+         pour dire si la ligne a bien été inséré*/
         public static Boolean ModifierNiveaux(Niveaux niveaux)
         {
             Boolean test = false;
@@ -72,6 +81,9 @@ namespace Projet.NET.Controleur
             }
             return test;
         }
+        /*La méthode SupprimerNiveaux reçoit un type Niveaux
+         Elle vas supprimer une niveaux
+         et retourne un Boolean pour dire si la ligne a bien été inséré*/
         public static Boolean SupprimerNiveaux(Niveaux niveaux)
         {
             bool test = false;

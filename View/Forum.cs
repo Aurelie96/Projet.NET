@@ -30,7 +30,8 @@ namespace Projet.NET.View
             Dgv_Forum.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
             Dgv_Forum.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
         }
-
+        /*btn_Question_Click
+         Permet d'aller sur la view AjoutQuestion*/
         private void btn_Question_Click(object sender, EventArgs e)
         {
             string nomMatiere = LblMatiere.Text;
@@ -39,7 +40,9 @@ namespace Projet.NET.View
             ajoutQuestion.Hide();
             ajoutQuestion.Show();
         }
-
+        /*Dgv_Forum_CellContentClick
+         Permet de cliquer sur une cellule du DataGridView
+         Permet d'aller sur la view RepondreQuestion*/
         private void Dgv_Forum_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridViewRow lineSelected = Dgv_Forum.Rows[Dgv_Forum.SelectedCells[0].RowIndex];
@@ -52,7 +55,8 @@ namespace Projet.NET.View
             repondreQuestion.Hide();
             repondreQuestion.Show();
         }
-
+        /*BtnRafraichir_Click
+         Permet de rafraîchir le DataGridView*/
         private void BtnRafraichir_Click(object sender, EventArgs e)
         {
             Dgv_Forum.Rows.Clear();
@@ -68,7 +72,8 @@ namespace Projet.NET.View
             Dgv_Forum.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
             Dgv_Forum.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
         }
-
+        /*BtnRetour_Click
+         Permet de retourner sur la view Accueil*/
         private void BtnRetour_Click(object sender, EventArgs e)
         {
             Users users = new Users(LblUser.Text);

@@ -12,6 +12,8 @@ namespace Projet.NET.Controleur
     public class RepondreDAO
     {
         private static ConnexionBDD connexion = new ConnexionBDD();
+        /*La méthode ChargerRepondre reçoit un type Envoyer
+         Il vas récupérer tout les réponse par rapport a une question*/
         public static List<Repondre> ChargerRepondre(Envoyer envoyer)
         {
             List<Repondre> lesReponses = new List<Repondre>();
@@ -39,6 +41,10 @@ namespace Projet.NET.Controleur
             }
             return lesReponses;
         }
+        /*La méthode CreerReponse recoit un type Repondre
+         Il permet de créer un champ
+         dans la table Reponse et de retourner un Boolean 
+         pour dire si la ligne a bien été inséré*/
         public static Boolean CreerReponse(Repondre repondre)
         {
             Boolean test = false;

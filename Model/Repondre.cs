@@ -8,10 +8,13 @@ namespace Projet.NET.Model
 {
     public class Repondre
     {
+        #region Propriétés
         public int idReponse { get; set; }
         public string texteReponse { get; set; }
         public int idMessage { get; set; }
+        #endregion
 
+        #region Constructeur
         public Repondre(int id, string texte, int idMess)
         {
             this.idReponse = id;
@@ -24,5 +27,6 @@ namespace Projet.NET.Model
             this.texteReponse = texte;
             this.idMessage = idMess;
         }
+        #endregion
     }
 }

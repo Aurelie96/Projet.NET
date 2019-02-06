@@ -8,6 +8,7 @@ namespace Projet.NET.Model
 {
     public class Users
     {
+        #region Propriétés
         public int idUser { get; set; }
         public string nomUser { get; set; }
         public string prenomUser { get; set; }
@@ -17,7 +18,9 @@ namespace Projet.NET.Model
         public int tuteurUser { get; set; }
         public int eleveUser { get; set; }
         public int idNiveaux { get; set; }
+        #endregion
 
+        #region Constructeur
         public Users(int id, string nom, string prenom, string login,
             string password, string email, int tuteur, int eleve, int idNiv)
         {
@@ -31,7 +34,6 @@ namespace Projet.NET.Model
             this.eleveUser = eleve;
             this.idNiveaux = idNiv;
         }
-
         public Users(string nom, string prenom, string login,
             string password, string email, int tuteur, int eleve, int idNiv)
         {
@@ -57,5 +59,6 @@ namespace Projet.NET.Model
         {
             this.idUser = id;
         }
+        #endregion
     }
 }

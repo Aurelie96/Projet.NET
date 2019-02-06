@@ -16,6 +16,7 @@ namespace Projet.NET.Data
         public static string user = "root";
         public static string password = "root";
 
+        /*La méthode execRead permet de lire dans la base de données*/
         public MySqlDataReader execRead(String requete)
         {
             string connexionString = $"server={dataSource};user={user};database={catalog};persistsecurityinfo=True;port={port};password={password};SslMode=none";
@@ -34,6 +35,7 @@ namespace Projet.NET.Data
                 return null;
             }
         }
+        /*La méthode execWrite permet d'écrire dans la base de données*/
         public void execWrite(String requete)
         {
             string connexionString = $"server={dataSource};user={user};database={catalog};persistsecurityinfo=True;port={port};password={password};SslMode=none";

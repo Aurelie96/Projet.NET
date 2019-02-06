@@ -12,6 +12,8 @@ namespace Projet.NET.Controleur
     public class EnvoyerDAO
     {
         private static ConnexionBDD connexion = new ConnexionBDD();
+        /*La méthode ChargerMessage recoit deux string 
+         et retourne le message qui contient l'objet et le texte*/
         public static Envoyer ChargerMessage(string objet, string texte)
         {
             Envoyer lesMessages = new Envoyer();
@@ -47,6 +49,7 @@ namespace Projet.NET.Controleur
             }
             return lesMessages;
         }
+        /*La méthode */
         public static List<Envoyer> ChargerMessageParMatiere(int user, int matiere)
         {
             List<Envoyer> lesMessages = new List<Envoyer>();

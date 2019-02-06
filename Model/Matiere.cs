@@ -8,9 +8,12 @@ namespace Projet.NET.Model
 {
     public class Matiere
     {
+        #region Propriétés
         public int idMatiere { get; set; }
         public string nomMatiere { get; set; }
+        #endregion
 
+        #region Constructeurs
         public Matiere(int id, string nom)
         {
             this.idMatiere = id;
@@ -24,5 +27,6 @@ namespace Projet.NET.Model
         {
             this.idMatiere = id;
         }
+        #endregion
     }
 }

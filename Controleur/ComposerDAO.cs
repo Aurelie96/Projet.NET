@@ -12,6 +12,10 @@ namespace Projet.NET.Controleur
     class ComposerDAO
     {
         private static ConnexionBDD connexion = new ConnexionBDD();
+
+        /*La méthode ChargerComposer permet de récupérer
+         toutes les données de la table Composer et de le mettre
+         dans une List<Composer>*/
         public static List<Composer> ChargerComposer()
         {
             List<Composer> lesComposers = new List<Composer>();
@@ -37,6 +41,9 @@ namespace Projet.NET.Controleur
             }
             return lesComposers;
         }
+        /*La méthode CréerComposer permet de créer un champ
+         dans la table Composer et de retourner un Boolean 
+         pour dire si la ligne a bien été inséré*/
         public static Boolean CreerComposer(Composer composer)
         {
             Boolean test = false;

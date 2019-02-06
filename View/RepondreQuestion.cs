@@ -29,7 +29,8 @@ namespace Projet.NET.View
             TxtQuestion.Text = envoyer.texteMessage;
             LblIdMessage.Text = envoyer.idMessage.ToString();
         }
-
+        /*BtnEnvoyer_Click
+         Permet d'envoyer une réponse pour les questions*/
         private void BtnEnvoyer_Click(object sender, EventArgs e)
         {
             Repondre repondre = new Repondre(TxtReponse.Text, int.Parse(LblIdMessage.Text));
@@ -50,7 +51,8 @@ namespace Projet.NET.View
                 MessageBox.Show("Le message n'a pas été envoyé");
             }
         }
-
+        /*BtnAnnuler_Click
+         Permet de fermer l'application et de retourner sur la view Forum*/
         private void BtnAnnuler_Click(object sender, EventArgs e)
         {
             Envoyer envoyer = new Envoyer(int.Parse(LblIdMessage.Text));

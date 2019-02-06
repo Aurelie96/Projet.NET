@@ -12,6 +12,10 @@ namespace Projet.NET.Controleur
     public class MatiereDAO
     {
         private static ConnexionBDD connexion = new ConnexionBDD();
+
+        /*La méthode ChargerMatiere permet de récupérer
+         toutes les données de la table Matiere et de le mettre
+         dans une List<Matiere>*/
         public static List<Matiere> ChargerMatiere()
         {
             List<Matiere> lesMatieres = new List<Matiere>();
@@ -36,6 +40,9 @@ namespace Projet.NET.Controleur
             }
             return lesMatieres;
         }
+        /*La méthode ChargerMatiereParIdMatiere recoit un idMatiere,
+         * récupère le nom de la matière
+         et renvoie un type Matiere*/
         public static Matiere ChargerMatiereParIdMatiere(int idmatiere)
         {
             Matiere lesMatieres = new Matiere(idmatiere);
@@ -60,7 +67,9 @@ namespace Projet.NET.Controleur
             }
             return lesMatieres;
         }
-
+        /*La méthode ChargerNomMatiereParUser reçoit un User,
+         récupère le nom des matière de l'utilisateur,
+         renvoie une List<Matiere>*/
         public static List<Matiere> ChargerNomMatiereParUser(Users users)
         {
             List<Matiere> lesMatieresUser = new List<Matiere>();
@@ -88,6 +97,9 @@ namespace Projet.NET.Controleur
             }
             return lesMatieresUser;
         }
+        /*La méthode CreerMatiere permet de créer un champ
+         dans la table Matiere et de retourner un Boolean 
+         pour dire si la ligne a bien été inséré*/
         public static Boolean CreerMatiere(Matiere matiere)
         {
             Boolean test = false;
@@ -107,6 +119,10 @@ namespace Projet.NET.Controleur
             }
             return test;
         }
+        /*La méthode ModifierMatiere reçoit un type Matiere
+         Elle vas faire une mise à jour d'une matière 
+         et de retourner un Boolean 
+         pour dire si la ligne a bien été inséré*/
         public static Boolean ModifierMatiere(Matiere matiere)
         {
             Boolean test = false;
@@ -124,6 +140,9 @@ namespace Projet.NET.Controleur
             }
             return test;
         }
+        /*La méthode SupprimerMatiere reçoit un type Matiere
+         Elle vas supprimer une matiere
+         et retourne un Boolean pour dire si la ligne a bien été inséré*/
         public static Boolean SupprimerMatiere(Matiere matiere)
         {
             bool test = false;
@@ -140,7 +159,9 @@ namespace Projet.NET.Controleur
             }
             return test;
         }
-
+        /*La méthode RecuperationIdMatiere reçoit un string matière
+         Elle recupère les Id des Matière par rapport a un nom de matiere
+         retourne un int*/
         public static int RecuperationIdMatiere(string matiere)
         {
             int i = 0;

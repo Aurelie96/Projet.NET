@@ -27,7 +27,9 @@ namespace Projet.NET.View
                 Dgv_Groupe.Rows.Add(LesMatieres[i].nomMatiere);
             }
         }
-        
+        /*Dgv_Groupe_CellContentClick
+         Permet de cliquer sur une cellule du dataGridView
+         Ouvre la view Forum*/
         private void Dgv_Groupe_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             Users user = new Users(lbl_login.Text);

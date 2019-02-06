@@ -8,6 +8,7 @@ namespace Projet.NET.Model
 {
     public class Envoyer
     {
+        #region Propriétés
         public int idMessage { get; set; }
         public string objetMessage { get; set; }
         public string texteMessage { get; set; }
@@ -15,7 +16,9 @@ namespace Projet.NET.Model
         public int idUser { get; set; }
         public int idMatiere { get; set; }
         public int idNiveaux { get; set; }
+        #endregion
 
+        #region Constructeur
         public Envoyer (int id, string objet, string text, DateTime date, int idUs, int idMat, int idNiv)
         {
             this.idMessage = id;
@@ -42,5 +45,6 @@ namespace Projet.NET.Model
         {
             this.idMessage = id;
         }
+        #endregion
     }
 }
