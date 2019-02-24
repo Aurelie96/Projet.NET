@@ -17,7 +17,7 @@ namespace Projet.NET.View
         public RepondreQuestion(Envoyer envoyer)
         {
             InitializeComponent();
-            List<Repondre> LesReponses = RepondreDAO.ChargerRepondre(envoyer);
+            List<Repondre> LesReponses = RepondreViewModel.ChargerRepondre(envoyer);
             for(int i = 0; i < LesReponses.Count(); i++)
             {
                 Console.Write(i);
@@ -34,13 +34,13 @@ namespace Projet.NET.View
         private void BtnEnvoyer_Click(object sender, EventArgs e)
         {
             Repondre repondre = new Repondre(TxtReponse.Text, int.Parse(LblIdMessage.Text));
-            bool i = RepondreDAO.CreerReponse(repondre);
+            bool i = RepondreViewModel.CreerReponse(repondre);
             if(i == true)
             {
                 Envoyer envoyer = new Envoyer(int.Parse(LblIdMessage.Text));
-                envoyer = EnvoyerDAO.ChargerMessageParIdMessage(envoyer);
-                Users users = UsersDAO.ChargerLoginUser(envoyer.idUser);
-                Matiere matiere = MatiereDAO.ChargerMatiereParIdMatiere(envoyer.idMatiere);
+                envoyer = EnvoyerViewModel.ChargerMessageParIdMessage(envoyer);
+                Users users = UsersViewModel.ChargerLoginUser(envoyer.idUser);
+                Matiere matiere = MatiereViewModel.ChargerMatiereParIdMatiere(envoyer.idMatiere);
                 MessageBox.Show("Le message a bien été envoyé !");
                 Forum forum = new Forum(users, matiere.nomMatiere);
                 ActiveForm.Close();
@@ -56,9 +56,9 @@ namespace Projet.NET.View
         private void BtnAnnuler_Click(object sender, EventArgs e)
         {
             Envoyer envoyer = new Envoyer(int.Parse(LblIdMessage.Text));
-            envoyer = EnvoyerDAO.ChargerMessageParIdMessage(envoyer);
-            Users users = UsersDAO.ChargerLoginUser(envoyer.idUser);
-            Matiere matiere = MatiereDAO.ChargerMatiereParIdMatiere(envoyer.idMatiere);
+            envoyer = EnvoyerViewModel.ChargerMessageParIdMessage(envoyer);
+            Users users = UsersViewModel.ChargerLoginUser(envoyer.idUser);
+            Matiere matiere = MatiereViewModel.ChargerMatiereParIdMatiere(envoyer.idMatiere);
             Forum forum = new Forum(users, matiere.nomMatiere);
             ActiveForm.Close();
             forum.ShowDialog();

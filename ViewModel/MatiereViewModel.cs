@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Projet.NET.Controleur
 {
-    public class MatiereDAO
+    public class MatiereViewModel
     {
         private static ConnexionBDD connexion = new ConnexionBDD();
 

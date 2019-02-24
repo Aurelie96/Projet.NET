@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Projet.NET.Controleur
 {
-    public class UsersDAO
+    public class UsersViewModel
     {
         private static ConnexionBDD connexion = new ConnexionBDD();
         /*La méthode ChargerUser permet de récupérer tout les user

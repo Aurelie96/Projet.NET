@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Projet.NET.Controleur
 {
-    class ComposerDAO
+    public class ComposerViewModel
     {
         private static ConnexionBDD connexion = new ConnexionBDD();
 

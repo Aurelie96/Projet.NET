@@ -26,7 +26,7 @@ namespace Projet.NET
         private void BtnConnexion_Click_1(object sender, EventArgs e)
         {
             bool test = false;
-            test = UsersDAO.Connexion(txtLogin.Text, txtMotDePasse.Text);
+            test = UsersViewModel.Connexion(txtLogin.Text, txtMotDePasse.Text);
             Users user = new Users(txtLogin.Text, txtMotDePasse.Text);
             if (test == true)
             {
@@ -58,8 +58,8 @@ namespace Projet.NET
          Permet d'envoyer un mail pour donner son mot de passe*/
         private void LinkMdpOublie_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            string user = UsersDAO.RecuperationMail(txtLogin.Text);
-            string motdepass = UsersDAO.RecuperationMdp(txtLogin.Text);
+            string user = UsersViewModel.RecuperationMail(txtLogin.Text);
+            string motdepass = UsersViewModel.RecuperationMdp(txtLogin.Text);
             MailMessage email = new MailMessage();
             email.From = new System.Net.Mail.MailAddress("soutienscolaireril2017@gmail.com");
             email.To.Add(new MailAddress(user));

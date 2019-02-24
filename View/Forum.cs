@@ -17,9 +17,9 @@ namespace Projet.NET.View
         public Forum(Users user, string nomMatiere)
         {
             InitializeComponent();
-            int users = UsersDAO.ChargerIdUser(user);
-            int matiere = MatiereDAO.RecuperationIdMatiere(nomMatiere);
-            List<Envoyer> lesMessages = EnvoyerDAO.ChargerMessageParMatiere(users, matiere);
+            int users = UsersViewModel.ChargerIdUser(user);
+            int matiere = MatiereViewModel.RecuperationIdMatiere(nomMatiere);
+            List<Envoyer> lesMessages = EnvoyerViewModel.ChargerMessageParMatiere(users, matiere);
             for (int i = 0; i < lesMessages.Count(); i++)
             {
                 Console.Write(i);
@@ -48,7 +48,7 @@ namespace Projet.NET.View
             DataGridViewRow lineSelected = Dgv_Forum.Rows[Dgv_Forum.SelectedCells[0].RowIndex];
             string objetMessage = Convert.ToString(lineSelected.Cells[0].Value);
             string texteMessage = Convert.ToString(lineSelected.Cells[1].Value);
-            Envoyer envoyer = EnvoyerDAO.ChargerMessage(objetMessage, texteMessage);
+            Envoyer envoyer = EnvoyerViewModel.ChargerMessage(objetMessage, texteMessage);
 
             ActiveForm.Close();
             RepondreQuestion repondreQuestion = new RepondreQuestion(envoyer);
@@ -61,9 +61,9 @@ namespace Projet.NET.View
         {
             Dgv_Forum.Rows.Clear();
             Users user = new Users(LblUser.Text);
-            int users = UsersDAO.ChargerIdUser(user);
-            int matiere = MatiereDAO.RecuperationIdMatiere(LblMatiere.Text);
-            List<Envoyer> lesMessages = EnvoyerDAO.ChargerMessageParMatiere(users, matiere);
+            int users = UsersViewModel.ChargerIdUser(user);
+            int matiere = MatiereViewModel.RecuperationIdMatiere(LblMatiere.Text);
+            List<Envoyer> lesMessages = EnvoyerViewModel.ChargerMessageParMatiere(users, matiere);
             for(int i = 0; i <lesMessages.Count(); i++)
             {
                 Console.Write(i);

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Projet.NET.Controleur
 {
-    public class RepondreDAO
+    public class RepondreViewModel
     {
         private static ConnexionBDD connexion = new ConnexionBDD();
         /*La méthode ChargerRepondre reçoit un type Envoyer

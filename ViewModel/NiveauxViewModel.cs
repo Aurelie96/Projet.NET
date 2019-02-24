@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Projet.NET.Controleur
 {
-    public class NiveauxDAO
+    public class NiveauxViewModel
     {
         private static ConnexionBDD connexion = new ConnexionBDD();
         /*La méthode ChargerNiveaux permet de récupérer tout les niveaux

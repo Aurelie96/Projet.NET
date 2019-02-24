@@ -60,12 +60,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controleur\ComposerDAO.cs" />
-    <Compile Include="Controleur\MatiereDAO.cs" />
-    <Compile Include="Controleur\EnvoyerDAO.cs" />
-    <Compile Include="Controleur\NiveauxDAO.cs" />
-    <Compile Include="Controleur\RepondreDAO.cs" />
-    <Compile Include="Controleur\UsersDAO.cs" />
+    <Compile Include="ViewModel\ComposerViewModel.cs" />
+    <Compile Include="ViewModel\MatiereViewModel.cs" />
+    <Compile Include="ViewModel\EnvoyerViewModel.cs" />
+    <Compile Include="ViewModel\NiveauxViewModel.cs" />
+    <Compile Include="ViewModel\RepondreViewModel.cs" />
+    <Compile Include="ViewModel\UsersViewModel.cs" />
     <Compile Include="Data\ConnexionBDD.cs" />
     <Compile Include="Model\Composer.cs" />
     <Compile Include="Model\Matiere.cs" />

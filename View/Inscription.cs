@@ -43,7 +43,7 @@ namespace Projet.NET.View
                 )
             {
                 Users u = new Users(txtNom.Text, txtPrenom.Text, txtPseudo.Text, txtPwd.Text, txtEmail.Text, Convert.ToInt32(checkBox1.Checked), Convert.ToInt32(checkBox2.Checked), cbxLevels.SelectedIndex + 1);
-                UsersDAO.CreerUser(u);
+                UsersViewModel.CreerUser(u);
                 ActiveForm.Close();
                 Accueil a = new Accueil(u);
                 a.ShowDialog();
@@ -63,7 +63,7 @@ namespace Projet.NET.View
          Permet de mettre tout les niveaux dans une liste*/
         private void Inscription_Load(object sender, EventArgs e)
         {
-            List<Niveaux> lstNiveaux = NiveauxDAO.ChargerNiveaux();
+            List<Niveaux> lstNiveaux = NiveauxViewModel.ChargerNiveaux();
             foreach (Niveaux niveau in lstNiveaux)
             {
                 cbxLevels.Items.Add(niveau.nomNiveaux);

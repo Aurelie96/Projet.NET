@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Projet.NET.Controleur
 {
-    public class EnvoyerDAO
+    public class EnvoyerViewModel
     {
         private static ConnexionBDD connexion = new ConnexionBDD();
         /*La méthode ChargerMessage recoit deux string 

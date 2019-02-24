@@ -26,14 +26,14 @@ namespace Projet.NET.View
         private void BtnAjouter_Click(object sender, EventArgs e)
         {
             Users use = new Users(Lbl_Login.Text);
-            int user = UsersDAO.ChargerIdUser(use);
-            int niveau = UsersDAO.ChargerIdNiveauxParUser(use);
-            int matiere = MatiereDAO.RecuperationIdMatiere(LblMatiere.Text);
+            int user = UsersViewModel.ChargerIdUser(use);
+            int niveau = UsersViewModel.ChargerIdNiveauxParUser(use);
+            int matiere = MatiereViewModel.RecuperationIdMatiere(LblMatiere.Text);
             DateTime thisDay = DateTime.Today;
             thisDay.ToString("yyyy-MM-d HH:mm:ss");
 
             Envoyer LeMesssage = new Envoyer(TxtObjet.Text, txtQuestion.Text, thisDay, user, matiere, niveau);
-            bool i = EnvoyerDAO.CreerMessage(LeMesssage);
+            bool i = EnvoyerViewModel.CreerMessage(LeMesssage);
             if(i == true)
             {
                 
