@@ -27,13 +27,28 @@ namespace Projet.NET
         {
             bool test = false;
             test = UsersViewModel.Connexion(txtLogin.Text, txtMotDePasse.Text);
-            Users user = new Users(txtLogin.Text, txtMotDePasse.Text);
             if (test == true)
             {
-                //ActiveForm.Visible = false;
-                Accueil accueil = new Accueil(user);
-                accueil.Hide();
-                accueil.Show();
+                Users user = UsersViewModel.TypeUser(txtLogin.Text, txtMotDePasse.Text);
+
+                if(user.eleveUser == 1 && user.tuteurUser == 0)
+                {
+                    AccueilEleve accueil = new AccueilEleve(user);
+                    accueil.Hide();
+                    accueil.Show();
+                }
+                if (user.eleveUser == 0 && user.tuteurUser == 1)
+                {
+                    AccueilTuteur accueil = new AccueilTuteur(user);
+                    accueil.Hide();
+                    accueil.Show();
+                }
+                if (user.eleveUser == 1 && user.tuteurUser == 1)
+                {
+                    Accueil accueil = new Accueil(user);
+                    accueil.Hide();
+                    accueil.Show();
+                }
             }
             else
             {

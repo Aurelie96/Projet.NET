@@ -40,3 +40,5 @@ D:\Projet.NET\Projet.NET\obj\Debug\Projet.NET.View.RepondreQuestion.resources
 D:\Projet.NET\Projet.NET\bin\Debug\Google.Protobuf.dll
 D:\Projet.NET\Projet.NET\bin\Debug\Google.Protobuf.xml
 D:\Projet.NET\Projet.NET\bin\Debug\MySql.Data.xml
+D:\Projet.NET\Projet.NET\obj\Debug\Projet.NET.View.AccueilEleve.resources
+D:\Projet.NET\Projet.NET\obj\Debug\Projet.NET.View.AccueilTuteur.resources

@@ -223,6 +223,37 @@ namespace Projet.NET.Controleur
             }
             return test;
         }
+        //type = 0 ==> Eleve
+        //type = 1 ==> Tuteur
+        //type = 2 ==> Eleve/Tuteur
+        public static Users TypeUser(string login, string password)
+        {
+            Users user = new Users();
+            try
+            {
+                MySqlDataReader reader;
+                reader = connexion.execRead($"SELECT * FROM Users WHERE loginuser = '{login}' AND mdpUser = '{password}';");
+                if (reader.Read())
+                {
+                    user = new Users(
+                        reader.GetInt32(0),
+                        reader.GetString(1),
+                        reader.GetString(2),
+                        reader.GetString(3),
+                        reader.GetString(4),
+                        reader.GetString(5),
+                        reader.GetInt32(6),
+                        reader.GetInt32(7),
+                        reader.GetInt32(8));
+                }
+            }
+            catch (MySqlException e)
+            {
+                Console.WriteLine(e);
+                user = null;
+            }
+            return user;
+        }
         /*La méthode RecuperationMail reçoit un string de login 
          et retourn l'adresse mail de l'utilisateur*/
         public static string RecuperationMail(string login)

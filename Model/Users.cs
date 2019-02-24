@@ -59,6 +59,9 @@ namespace Projet.NET.Model
         {
             this.idUser = id;
         }
+        public Users()
+        {
+        }
         #endregion
     }
 }

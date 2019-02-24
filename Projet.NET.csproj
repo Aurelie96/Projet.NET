@@ -78,6 +78,18 @@
     <Compile Include="View\Accueil.Designer.cs">
       <DependentUpon>Accueil.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\AccueilEleve.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\AccueilEleve.Designer.cs">
+      <DependentUpon>AccueilEleve.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\AccueilTuteur.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\AccueilTuteur.Designer.cs">
+      <DependentUpon>AccueilTuteur.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\AjoutQuestion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -122,6 +134,12 @@
     </Compile>
     <EmbeddedResource Include="View\Accueil.resx">
       <DependentUpon>Accueil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\AccueilEleve.resx">
+      <DependentUpon>AccueilEleve.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\AccueilTuteur.resx">
+      <DependentUpon>AccueilTuteur.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\AjoutQuestion.resx">
       <DependentUpon>AjoutQuestion.cs</DependentUpon>
