@@ -17,6 +17,7 @@ namespace Projet.NET.View
         public RepondreQuestion(Envoyer envoyer)
         {
             InitializeComponent();
+            //Récupération de toute les réponses et remplir le dataGridView
             List<Repondre> LesReponses = RepondreController.ChargerRepondre(envoyer);
             for(int i = 0; i < LesReponses.Count(); i++)
             {

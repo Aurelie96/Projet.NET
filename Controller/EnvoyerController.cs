@@ -49,7 +49,8 @@ namespace Projet.NET.Controleur
             }
             return lesMessages;
         }
-        /*La méthode */
+        /*La méthode ChargerMessageParMatiere recoit deux int  
+         et retourne le message de l'utilisateur par rapport a une matière*/
         public static List<Envoyer> ChargerMessageParMatiere(int user, int matiere)
         {
             List<Envoyer> lesMessages = new List<Envoyer>();
@@ -86,6 +87,8 @@ namespace Projet.NET.Controleur
             }
             return lesMessages;
         }
+        /*La méthode ChargerMessageParIdMessage recoit un paramètre de type Envoyer 
+         et retourne le message par rapport a l'id du message qui se trouve dans Envoyer*/
         public static Envoyer ChargerMessageParIdMessage(Envoyer envoyer)
         {
             Envoyer lesMessages = new Envoyer();
@@ -120,6 +123,9 @@ namespace Projet.NET.Controleur
             }
             return lesMessages;
         }
+        /*La méthode CreerMessage permet de créer un champ
+         dans la table Envoyer et de retourner un Boolean 
+         pour dire si la ligne a bien été inséré*/
         public static Boolean CreerMessage(Envoyer message)
         {
             Boolean test = false;
@@ -143,6 +149,10 @@ namespace Projet.NET.Controleur
             }
             return test;
         }
+        /*La méthode ModifierMessage reçoit un type Envoyer
+         Elle vas faire une mise à jour d'un message 
+         et de retourner un Boolean 
+         pour dire si la ligne a bien été inséré*/
         public static Boolean ModifierMessage(Envoyer message)
         {
             Boolean test = false;
@@ -165,6 +175,9 @@ namespace Projet.NET.Controleur
             }
             return test;
         }
+        /*La méthode SupprimerMessage reçoit un type Envoyer
+         Elle vas supprimer un message
+         et retourne un Boolean pour dire si la ligne a bien été supprimé*/
         public static Boolean SupprimerMessage(Envoyer message)
         {
             bool test = false;

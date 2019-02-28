@@ -184,7 +184,7 @@ namespace Projet.NET.Controleur
         }
         /*La méthode SupprimerUser reçoit un type Users
          Elle vas supprimer un user
-         et retourne un Boolean pour dire si la ligne a bien été inséré*/
+         et retourne un Boolean pour dire si la ligne a bien été supprimé*/
         public static Boolean SupprimerUser(Users user)
         {
             bool test = false;
