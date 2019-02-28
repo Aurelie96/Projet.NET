@@ -26,10 +26,10 @@ namespace Projet.NET
         private void BtnConnexion_Click_1(object sender, EventArgs e)
         {
             bool test = false;
-            test = UsersViewModel.Connexion(txtLogin.Text, txtMotDePasse.Text);
+            test = UsersController.Connexion(txtLogin.Text, txtMotDePasse.Text);
             if (test == true)
             {
-                Users user = UsersViewModel.TypeUser(txtLogin.Text, txtMotDePasse.Text);
+                Users user = UsersController.TypeUser(txtLogin.Text, txtMotDePasse.Text);
 
                 if(user.eleveUser == 1 && user.tuteurUser == 0)
                 {
@@ -73,8 +73,8 @@ namespace Projet.NET
          Permet d'envoyer un mail pour donner son mot de passe*/
         private void LinkMdpOublie_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            string user = UsersViewModel.RecuperationMail(txtLogin.Text);
-            string motdepass = UsersViewModel.RecuperationMdp(txtLogin.Text);
+            string user = UsersController.RecuperationMail(txtLogin.Text);
+            string motdepass = UsersController.RecuperationMdp(txtLogin.Text);
             MailMessage email = new MailMessage();
             email.From = new System.Net.Mail.MailAddress("soutienscolaireril2017@gmail.com");
             email.To.Add(new MailAddress(user));

@@ -12,24 +12,23 @@ using System.Windows.Forms;
 
 namespace Projet.NET.View
 {
-    public partial class Accueil : Form
+    public partial class ListMatiere : Form
     {
-        public Accueil(Users user)
+        public ListMatiere(Users user, string nomNiveaux)
         {
             InitializeComponent();
             Connexion connexion = new Connexion();
             connexion.Close();
             lbl_login.Text = user.loginUser;
-            List<Matiere> LesMatieres = MatiereController.ChargerNomMatiereParUser(user);
-            for(int i = 0; i < LesMatieres.Count(); i++)
+            int idNiveaux = NiveauxController.TrouverIdNiveaux(nomNiveaux);
+            List<Matiere> LesMatieres = ComposerController.ChargerComposerNomMatiere(idNiveaux);
+            for (int i = 0; i < LesMatieres.Count(); i++)
             {
                 Console.Write(i);
                 Dgv_Groupe.Rows.Add(LesMatieres[i].nomMatiere);
             }
         }
-        /*Dgv_Groupe_CellContentClick
-         Permet de cliquer sur une cellule du dataGridView
-         Ouvre la view Forum*/
+
         private void Dgv_Groupe_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             Users user = new Users(lbl_login.Text);
@@ -37,7 +36,7 @@ namespace Projet.NET.View
             string nomMatiere = Convert.ToString(lineSelected.Cells[0].Value);
             Matiere matiere = new Matiere(Dgv_Groupe.SelectedRows.ToString());
             ActiveForm.Close();
-            Forum forum = new Forum(user, nomMatiere);
+            ForumTuteur forum = new ForumTuteur(user, nomMatiere);
             forum.Hide();
             forum.Show();
         }

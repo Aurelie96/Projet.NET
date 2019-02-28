@@ -42,3 +42,7 @@ D:\Projet.NET\Projet.NET\bin\Debug\Google.Protobuf.xml
 D:\Projet.NET\Projet.NET\bin\Debug\MySql.Data.xml
 D:\Projet.NET\Projet.NET\obj\Debug\Projet.NET.View.AccueilEleve.resources
 D:\Projet.NET\Projet.NET\obj\Debug\Projet.NET.View.AccueilTuteur.resources
+D:\Projet.NET\Projet.NET\obj\Debug\Projet.NET.View.ListMatiere.resources
+D:\Projet.NET\Projet.NET\obj\Debug\Projet.NET.View.ForumTuteur.resources
+D:\Projet.NET\Projet.NET\obj\Debug\Projet.NET.View.VoirReponse.resources
+D:\Projet.NET\Projet.NET\obj\Debug\Projet.NET.View.ForumEleve.resources

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Projet.NET.Controleur
 {
-    public class MatiereViewModel
+    public class MatiereController
     {
         private static ConnexionBDD connexion = new ConnexionBDD();
 

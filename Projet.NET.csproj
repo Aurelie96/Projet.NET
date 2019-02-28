@@ -60,12 +60,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ViewModel\ComposerViewModel.cs" />
-    <Compile Include="ViewModel\MatiereViewModel.cs" />
-    <Compile Include="ViewModel\EnvoyerViewModel.cs" />
-    <Compile Include="ViewModel\NiveauxViewModel.cs" />
-    <Compile Include="ViewModel\RepondreViewModel.cs" />
-    <Compile Include="ViewModel\UsersViewModel.cs" />
+    <Compile Include="Controller\ComposerController.cs" />
+    <Compile Include="Controller\MatiereController.cs" />
+    <Compile Include="Controller\EnvoyerController.cs" />
+    <Compile Include="Controller\NiveauxController.cs" />
+    <Compile Include="Controller\RepondreController.cs" />
+    <Compile Include="Controller\UsersController.cs" />
     <Compile Include="Data\ConnexionBDD.cs" />
     <Compile Include="Model\Composer.cs" />
     <Compile Include="Model\Matiere.cs" />
@@ -111,17 +111,41 @@
     <Compile Include="View\Forum.Designer.cs">
       <DependentUpon>Forum.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\ForumEleve.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ForumEleve.Designer.cs">
+      <DependentUpon>ForumEleve.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ForumTuteur.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ForumTuteur.Designer.cs">
+      <DependentUpon>ForumTuteur.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Inscription.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\Inscription.Designer.cs">
       <DependentUpon>Inscription.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\ListMatiere.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ListMatiere.Designer.cs">
+      <DependentUpon>ListMatiere.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\RepondreQuestion.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\RepondreQuestion.Designer.cs">
       <DependentUpon>RepondreQuestion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\VoirReponse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\VoirReponse.Designer.cs">
+      <DependentUpon>VoirReponse.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -150,11 +174,23 @@
     <EmbeddedResource Include="View\Forum.resx">
       <DependentUpon>Forum.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\ForumEleve.resx">
+      <DependentUpon>ForumEleve.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ForumTuteur.resx">
+      <DependentUpon>ForumTuteur.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Inscription.resx">
       <DependentUpon>Inscription.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\ListMatiere.resx">
+      <DependentUpon>ListMatiere.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\RepondreQuestion.resx">
       <DependentUpon>RepondreQuestion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\VoirReponse.resx">
+      <DependentUpon>VoirReponse.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

@@ -19,6 +19,10 @@ namespace Projet.NET.Model
             this.idNiveaux = id;
             this.nomNiveaux = nom;
         }
+        public Niveaux(string nom)
+        {
+            this.nomNiveaux = nom;
+        }
         #endregion
     }
 }

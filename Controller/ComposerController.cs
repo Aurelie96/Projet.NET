@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Projet.NET.Controleur
 {
-    public class ComposerViewModel
+    public class ComposerController
     {
         private static ConnexionBDD connexion = new ConnexionBDD();
 
@@ -40,6 +40,33 @@ namespace Projet.NET.Controleur
                 Console.WriteLine(e);
             }
             return lesComposers;
+        }
+        public static List<Matiere> ChargerComposerNomMatiere(int idNiveau)
+        {
+            List<Matiere> lesMatieres = new List<Matiere>();
+            try
+            {
+                MySqlDataReader reader;
+                reader = connexion.execRead("SELECT " +
+                    "m.idMatiere," +
+                    "m.nomMatiere " +
+                    "from Composer c, Matiere m " +
+                    "where c.idMatiere = m.idMatiere " +
+                    $"and c.idNiveau = '{idNiveau}';");
+                while (reader.Read())
+                {
+                    Matiere m = new Matiere(
+                        reader.GetInt32(0),
+                        reader.GetString(1));
+                    lesMatieres.Add(m);
+                }
+                reader.Close();
+            }
+            catch (MySqlException e)
+            {
+                Console.WriteLine(e);
+            }
+            return lesMatieres;
         }
         /*La méthode CréerComposer permet de créer un champ
          dans la table Composer et de retourner un Boolean 

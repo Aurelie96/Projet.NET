@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Projet.NET.Controleur
 {
-    public class NiveauxViewModel
+    public class NiveauxController
     {
         private static ConnexionBDD connexion = new ConnexionBDD();
         /*La méthode ChargerNiveaux permet de récupérer tout les niveaux
@@ -37,6 +37,29 @@ namespace Projet.NET.Controleur
                 Console.WriteLine(e);
             }
             return lesNiveaux;
+        }
+
+        public static int TrouverIdNiveaux(string nomNiveaux)
+        {
+            int i = 0;
+            try
+            {
+                MySqlDataReader reader;
+                reader = connexion.execRead("SELECT " +
+                    "idNiveau," +
+                    "nomNiveau from Niveaux" +
+                    $" WHERE nomNiveau = '{nomNiveaux}'");
+                while (reader.Read())
+                {
+                    i = reader.GetInt32(0);
+                }
+                reader.Close();
+            }
+            catch (MySqlException e)
+            {
+                Console.WriteLine(e);
+            }
+            return i;
         }
         /*La méthode CreerNiveaux permet de créer un champ
          dans la table Niveaux et de retourner un Boolean 

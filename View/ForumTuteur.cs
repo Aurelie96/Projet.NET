@@ -12,9 +12,9 @@ using System.Windows.Forms;
 
 namespace Projet.NET.View
 {
-    public partial class Forum : Form
+    public partial class ForumTuteur : Form
     {
-        public Forum(Users user, string nomMatiere)
+        public ForumTuteur(Users user, string nomMatiere)
         {
             InitializeComponent();
             int users = UsersController.ChargerIdUser(user);
@@ -30,31 +30,6 @@ namespace Projet.NET.View
             Dgv_Forum.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
             Dgv_Forum.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
         }
-        /*btn_Question_Click
-         Permet d'aller sur la view AjoutQuestion*/
-        private void btn_Question_Click(object sender, EventArgs e)
-        {
-            string nomMatiere = LblMatiere.Text;
-            AjoutQuestion ajoutQuestion = new AjoutQuestion(LblUser.Text, LblMatiere.Text);
-            ActiveForm.Close();
-            ajoutQuestion.Hide();
-            ajoutQuestion.Show();
-        }
-        /*Dgv_Forum_CellContentClick
-         Permet de cliquer sur une cellule du DataGridView
-         Permet d'aller sur la view RepondreQuestion*/
-        private void Dgv_Forum_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            DataGridViewRow lineSelected = Dgv_Forum.Rows[Dgv_Forum.SelectedCells[0].RowIndex];
-            string objetMessage = Convert.ToString(lineSelected.Cells[0].Value);
-            string texteMessage = Convert.ToString(lineSelected.Cells[1].Value);
-            Envoyer envoyer = EnvoyerController.ChargerMessage(objetMessage, texteMessage);
-
-            ActiveForm.Close();
-            RepondreQuestion repondreQuestion = new RepondreQuestion(envoyer);
-            repondreQuestion.Hide();
-            repondreQuestion.Show();
-        }
         /*BtnRafraichir_Click
          Permet de rafraîchir le DataGridView*/
         private void BtnRafraichir_Click(object sender, EventArgs e)
@@ -64,7 +39,7 @@ namespace Projet.NET.View
             int users = UsersController.ChargerIdUser(user);
             int matiere = MatiereController.RecuperationIdMatiere(LblMatiere.Text);
             List<Envoyer> lesMessages = EnvoyerController.ChargerMessageParMatiere(users, matiere);
-            for(int i = 0; i <lesMessages.Count(); i++)
+            for (int i = 0; i < lesMessages.Count(); i++)
             {
                 Console.Write(i);
                 Dgv_Forum.Rows.Add(lesMessages[i].objetMessage, lesMessages[i].texteMessage);
@@ -78,9 +53,22 @@ namespace Projet.NET.View
         {
             Users users = new Users(LblUser.Text);
             ActiveForm.Close();
-            Accueil accueil = new Accueil(users);
+            AccueilTuteur accueil = new AccueilTuteur(users);
             accueil.Hide();
             accueil.Show();
+        }
+
+        private void Dgv_Forum_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridViewRow lineSelected = Dgv_Forum.Rows[Dgv_Forum.SelectedCells[0].RowIndex];
+            string objetMessage = Convert.ToString(lineSelected.Cells[0].Value);
+            string texteMessage = Convert.ToString(lineSelected.Cells[1].Value);
+            Envoyer envoyer = EnvoyerController.ChargerMessage(objetMessage, texteMessage);
+
+            ActiveForm.Close();
+            RepondreQuestion repondreQuestion = new RepondreQuestion(envoyer);
+            repondreQuestion.Hide();
+            repondreQuestion.Show();
         }
     }
 }

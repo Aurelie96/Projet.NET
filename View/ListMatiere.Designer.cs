@@ -1,6 +1,6 @@
 ﻿namespace Projet.NET.View
 {
-    partial class AccueilTuteur
+    partial class ListMatiere
     {
         /// <summary>
         /// Required designer variable.
@@ -31,12 +31,48 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.label1 = new System.Windows.Forms.Label();
-            this.Dgv_Niveaux = new System.Windows.Forms.DataGridView();
+            this.Dgv_Groupe = new System.Windows.Forms.DataGridView();
             this.dgv_GroupeNom = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label1 = new System.Windows.Forms.Label();
             this.lbl_login = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.Dgv_Niveaux)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Dgv_Groupe)).BeginInit();
             this.SuspendLayout();
+            // 
+            // Dgv_Groupe
+            // 
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Book Antiqua", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Dgv_Groupe.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.Dgv_Groupe.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Dgv_Groupe.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Book Antiqua", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Dgv_Groupe.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.Dgv_Groupe.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Dgv_Groupe.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgv_GroupeNom});
+            this.Dgv_Groupe.Location = new System.Drawing.Point(12, 52);
+            this.Dgv_Groupe.Name = "Dgv_Groupe";
+            this.Dgv_Groupe.RowTemplate.Height = 24;
+            this.Dgv_Groupe.Size = new System.Drawing.Size(896, 478);
+            this.Dgv_Groupe.TabIndex = 7;
+            this.Dgv_Groupe.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgv_Groupe_CellContentClick);
+            // 
+            // dgv_GroupeNom
+            // 
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Book Antiqua", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgv_GroupeNom.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dgv_GroupeNom.HeaderText = "Nom des groupes du forum";
+            this.dgv_GroupeNom.Name = "dgv_GroupeNom";
+            this.dgv_GroupeNom.ReadOnly = true;
+            this.dgv_GroupeNom.Width = 1450;
             // 
             // label1
             // 
@@ -45,44 +81,8 @@
             this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(147, 40);
-            this.label1.TabIndex = 3;
+            this.label1.TabIndex = 6;
             this.label1.Text = "Bonjour ";
-            // 
-            // Dgv_Niveaux
-            // 
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Book Antiqua", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Dgv_Niveaux.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.Dgv_Niveaux.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.Dgv_Niveaux.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Book Antiqua", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Dgv_Niveaux.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.Dgv_Niveaux.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.Dgv_Niveaux.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dgv_GroupeNom});
-            this.Dgv_Niveaux.Location = new System.Drawing.Point(12, 52);
-            this.Dgv_Niveaux.Name = "Dgv_Niveaux";
-            this.Dgv_Niveaux.RowTemplate.Height = 24;
-            this.Dgv_Niveaux.Size = new System.Drawing.Size(776, 386);
-            this.Dgv_Niveaux.TabIndex = 5;
-            this.Dgv_Niveaux.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgv_Niveaux_CellContentClick);
-            // 
-            // dgv_GroupeNom
-            // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Book Antiqua", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgv_GroupeNom.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dgv_GroupeNom.HeaderText = "Toute les niveaux d\'études";
-            this.dgv_GroupeNom.Name = "dgv_GroupeNom";
-            this.dgv_GroupeNom.ReadOnly = true;
-            this.dgv_GroupeNom.Width = 1450;
             // 
             // lbl_login
             // 
@@ -91,21 +91,20 @@
             this.lbl_login.Location = new System.Drawing.Point(165, 9);
             this.lbl_login.Name = "lbl_login";
             this.lbl_login.Size = new System.Drawing.Size(0, 40);
-            this.lbl_login.TabIndex = 6;
+            this.lbl_login.TabIndex = 8;
             // 
-            // AccueilTuteur
+            // ListMatiere
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.lbl_login);
-            this.Controls.Add(this.Dgv_Niveaux);
+            this.ClientSize = new System.Drawing.Size(920, 556);
+            this.Controls.Add(this.Dgv_Groupe);
             this.Controls.Add(this.label1);
-            this.Name = "AccueilTuteur";
-            this.Text = "AccueilTuteur";
+            this.Controls.Add(this.lbl_login);
+            this.Name = "ListMatiere";
+            this.Text = "ListMatiere";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            ((System.ComponentModel.ISupportInitialize)(this.Dgv_Niveaux)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Dgv_Groupe)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -113,9 +112,9 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView Dgv_Niveaux;
+        private System.Windows.Forms.DataGridView Dgv_Groupe;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgv_GroupeNom;
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lbl_login;
     }
 }
