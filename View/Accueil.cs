@@ -20,24 +20,24 @@ namespace Projet.NET.View
             Connexion connexion = new Connexion();
             connexion.Close();
             lbl_login.Text = user.loginUser;
-            List<Matiere> LesMatieres = MatiereController.ChargerNomMatiereParUser(user);
-            for(int i = 0; i < LesMatieres.Count(); i++)
+            List<Niveaux> LesNiveaux = NiveauxController.ChargerNiveaux();
+            for (int i = 0; i < LesNiveaux.Count(); i++)
             {
                 Console.Write(i);
-                Dgv_Groupe.Rows.Add(LesMatieres[i].nomMatiere);
+                Dgv_Niveaux.Rows.Add(LesNiveaux[i].nomNiveaux);
             }
         }
         /*Dgv_Groupe_CellContentClick
          Permet de cliquer sur une cellule du dataGridView
          Ouvre la view Forum*/
-        private void Dgv_Groupe_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void Dgv_Niveaux_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             Users user = new Users(lbl_login.Text);
-            DataGridViewRow lineSelected = Dgv_Groupe.Rows[Dgv_Groupe.SelectedCells[0].RowIndex];
-            string nomMatiere = Convert.ToString(lineSelected.Cells[0].Value);
-            Matiere matiere = new Matiere(Dgv_Groupe.SelectedRows.ToString());
+            DataGridViewRow lineSelected = Dgv_Niveaux.Rows[Dgv_Niveaux.SelectedCells[0].RowIndex];
+            string nomNiveau = Convert.ToString(lineSelected.Cells[0].Value);
+            Niveaux niveau = new Niveaux(Dgv_Niveaux.SelectedRows.ToString());
             ActiveForm.Close();
-            Forum forum = new Forum(user, nomMatiere);
+            ListMatiereTuteur forum = new ListMatiereTuteur(user, nomNiveau);
             forum.Hide();
             forum.Show();
         }

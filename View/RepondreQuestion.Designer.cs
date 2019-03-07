@@ -41,6 +41,7 @@
             this.TxtQuestion = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.LblIdMessage = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_Repondre)).BeginInit();
             this.SuspendLayout();
             // 
@@ -160,12 +161,22 @@
             this.LblIdMessage.TabIndex = 8;
             this.LblIdMessage.Visible = false;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(556, 400);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(0, 17);
+            this.label4.TabIndex = 9;
+            this.label4.Visible = false;
+            // 
             // RepondreQuestion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(753, 700);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.LblIdMessage);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.TxtQuestion);
@@ -198,5 +209,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Dgv_Repondre_id;
         private System.Windows.Forms.DataGridViewTextBoxColumn Dgv_RepondreReponse;
         private System.Windows.Forms.Label LblIdMessage;
+        private System.Windows.Forms.Label label4;
     }
 }

@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Dgv_Repondre = new System.Windows.Forms.DataGridView();
             this.Dgv_Repondre_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Dgv_RepondreReponse = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -43,8 +43,8 @@
             // 
             // Dgv_Repondre
             // 
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Book Antiqua", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Dgv_Repondre.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Book Antiqua", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Dgv_Repondre.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.Dgv_Repondre.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -67,9 +67,9 @@
             // 
             // Dgv_RepondreReponse
             // 
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Book Antiqua", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Dgv_RepondreReponse.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Book Antiqua", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Dgv_RepondreReponse.DefaultCellStyle = dataGridViewCellStyle2;
             this.Dgv_RepondreReponse.HeaderText = "Réponse sur la question";
             this.Dgv_RepondreReponse.Name = "Dgv_RepondreReponse";
             this.Dgv_RepondreReponse.Width = 1350;
@@ -112,6 +112,7 @@
             this.BtnAnnuler.TabIndex = 13;
             this.BtnAnnuler.Text = "Retour";
             this.BtnAnnuler.UseVisualStyleBackColor = true;
+            this.BtnAnnuler.Click += new System.EventHandler(this.BtnAnnuler_Click);
             // 
             // label2
             // 

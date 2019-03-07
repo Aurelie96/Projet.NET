@@ -42,11 +42,29 @@ namespace Projet.NET.View
                && (checkBox1.Checked || checkBox2.Checked)
                 )
             {
-                Users u = new Users(txtNom.Text, txtPrenom.Text, txtPseudo.Text, txtPwd.Text, txtEmail.Text, Convert.ToInt32(checkBox1.Checked), Convert.ToInt32(checkBox2.Checked), cbxLevels.SelectedIndex + 1);
-                UsersController.CreerUser(u);
-                ActiveForm.Close();
-                Accueil a = new Accueil(u);
-                a.ShowDialog();
+                Users user = new Users(txtNom.Text, txtPrenom.Text, txtPseudo.Text, txtPwd.Text, txtEmail.Text, Convert.ToInt32(checkBox1.Checked), Convert.ToInt32(checkBox2.Checked), cbxLevels.SelectedIndex + 1);
+                UsersController.CreerUser(user);
+                if (user.eleveUser == 1 && user.tuteurUser == 0)
+                {
+                    ActiveForm.Close();
+                    AccueilEleve accueil = new AccueilEleve(user);
+                    accueil.Hide();
+                    accueil.Show();
+                }
+                if (user.eleveUser == 0 && user.tuteurUser == 1)
+                {
+                    ActiveForm.Close();
+                    AccueilTuteur accueil = new AccueilTuteur(user);
+                    accueil.Hide();
+                    accueil.Show();
+                }
+                if (user.eleveUser == 1 && user.tuteurUser == 1)
+                {
+                    ActiveForm.Close();
+                    Accueil accueil = new Accueil(user);
+                    accueil.Hide();
+                    accueil.Show();
+                }
             }
             else
             {

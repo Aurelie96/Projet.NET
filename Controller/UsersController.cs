@@ -76,6 +76,27 @@ namespace Projet.NET.Controleur
             }
             return i;
         }
+        public static int ChargerIdNiveaux(Users user)
+        {
+            int i = 0;
+            try
+            {
+                MySqlDataReader reader;
+                reader = connexion.execRead("SELECT " +
+                    "idNiveau from Users" +
+                    $" WHERE loginUser = '{user.loginUser}'");
+                while (reader.Read())
+                {
+                    i = reader.GetInt32(0);
+                }
+                reader.Close();
+            }
+            catch (MySqlException e)
+            {
+                Console.WriteLine(e);
+            }
+            return i;
+        }
         /*La méthode ChargerLoginUser permet de récupérer le user
          * par rapport a un idUser
          et de les mettre dans un Users*/

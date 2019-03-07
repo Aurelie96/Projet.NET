@@ -17,9 +17,9 @@ namespace Projet.NET.View
         public ForumEleve(Users user, string nomMatiere)
         {
             InitializeComponent();
-            int users = UsersController.ChargerIdUser(user);
+            int niveau = UsersController.ChargerIdNiveaux(user);
             int matiere = MatiereController.RecuperationIdMatiere(nomMatiere);
-            List<Envoyer> lesMessages = EnvoyerController.ChargerMessageParMatiere(users, matiere);
+            List<Envoyer> lesMessages = EnvoyerController.ChargerMessageParMatiere(niveau, matiere);
             for (int i = 0; i < lesMessages.Count(); i++)
             {
                 Console.Write(i);
@@ -59,9 +59,9 @@ namespace Projet.NET.View
         {
             Dgv_Forum.Rows.Clear();
             Users user = new Users(LblUser.Text);
-            int users = UsersController.ChargerIdUser(user);
+            int niveau = UsersController.ChargerIdNiveaux(user);
             int matiere = MatiereController.RecuperationIdMatiere(LblMatiere.Text);
-            List<Envoyer> lesMessages = EnvoyerController.ChargerMessageParMatiere(users, matiere);
+            List<Envoyer> lesMessages = EnvoyerController.ChargerMessageParMatiere(niveau, matiere);
             for (int i = 0; i < lesMessages.Count(); i++)
             {
                 Console.Write(i);
@@ -72,7 +72,7 @@ namespace Projet.NET.View
         }
         /*BtnRetour_Click
          Permet de retourner sur la view Accueil*/
-        private void BtnRetour_Click(object sender, EventArgs e)
+        private void BtnRetour_Click_1(object sender, EventArgs e)
         {
             Users users = new Users(LblUser.Text);
             ActiveForm.Close();

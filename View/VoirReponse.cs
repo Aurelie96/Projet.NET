@@ -35,7 +35,7 @@ namespace Projet.NET.View
             envoyer = EnvoyerController.ChargerMessageParIdMessage(envoyer);
             Users users = UsersController.ChargerLoginUser(envoyer.idUser);
             Matiere matiere = MatiereController.ChargerMatiereParIdMatiere(envoyer.idMatiere);
-            Forum forum = new Forum(users, matiere.nomMatiere);
+            ForumEleve forum = new ForumEleve(users, matiere.nomMatiere);
             ActiveForm.Close();
             forum.ShowDialog();
         }

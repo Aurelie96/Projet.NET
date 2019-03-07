@@ -12,9 +12,9 @@ using System.Windows.Forms;
 
 namespace Projet.NET.View
 {
-    public partial class ListMatiere : Form
+    public partial class ListMatiereTuteur : Form
     {
-        public ListMatiere(Users user, string nomNiveaux)
+        public ListMatiereTuteur(Users user, string nomNiveaux)
         {
             InitializeComponent();
             Connexion connexion = new Connexion();
@@ -29,7 +29,6 @@ namespace Projet.NET.View
                 Dgv_Groupe.Rows.Add(LesMatieres[i].nomMatiere);
             }
         }
-
         private void Dgv_Groupe_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             Users user = new Users(lbl_login.Text);
@@ -37,7 +36,7 @@ namespace Projet.NET.View
             DataGridViewRow lineSelected = Dgv_Groupe.Rows[Dgv_Groupe.SelectedCells[0].RowIndex];
             string nomMatiere = Convert.ToString(lineSelected.Cells[0].Value);
             Matiere matiere = new Matiere(Dgv_Groupe.SelectedRows.ToString());
-            ForumTuteur forum = new ForumTuteur(user, nomMatiere, nomNiveaux);
+            Forum forum = new Forum(user, nomMatiere, nomNiveaux);
             ActiveForm.Close();
             forum.Hide();
             forum.Show();

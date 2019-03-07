@@ -14,17 +14,18 @@ namespace Projet.NET.View
 {
     public partial class ForumTuteur : Form
     {
-        public ForumTuteur(Users user, string nomMatiere)
+        public ForumTuteur(Users user, string nomMatiere, string nomNiveaux)
         {
             InitializeComponent();
-            int users = UsersController.ChargerIdUser(user);
+            int idNiveaux = NiveauxController.TrouverIdNiveaux(nomNiveaux);
             int matiere = MatiereController.RecuperationIdMatiere(nomMatiere);
-            List<Envoyer> lesMessages = EnvoyerController.ChargerMessageParMatiere(users, matiere);
+            List<Envoyer> lesMessages = EnvoyerController.ChargerMessageParMatiere(idNiveaux, matiere);
             for (int i = 0; i < lesMessages.Count(); i++)
             {
                 Console.Write(i);
                 Dgv_Forum.Rows.Add(lesMessages[i].objetMessage, lesMessages[i].texteMessage);
             }
+            LblNiveau.Text = nomNiveaux;
             LblMatiere.Text = nomMatiere;
             LblUser.Text = user.loginUser;
             Dgv_Forum.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
@@ -36,9 +37,9 @@ namespace Projet.NET.View
         {
             Dgv_Forum.Rows.Clear();
             Users user = new Users(LblUser.Text);
-            int users = UsersController.ChargerIdUser(user);
+            int niveau = UsersController.ChargerIdNiveaux(user);
             int matiere = MatiereController.RecuperationIdMatiere(LblMatiere.Text);
-            List<Envoyer> lesMessages = EnvoyerController.ChargerMessageParMatiere(users, matiere);
+            List<Envoyer> lesMessages = EnvoyerController.ChargerMessageParMatiere(niveau, matiere);
             for (int i = 0; i < lesMessages.Count(); i++)
             {
                 Console.Write(i);
@@ -66,7 +67,7 @@ namespace Projet.NET.View
             Envoyer envoyer = EnvoyerController.ChargerMessage(objetMessage, texteMessage);
 
             ActiveForm.Close();
-            RepondreQuestion repondreQuestion = new RepondreQuestion(envoyer);
+            RepondreQuestion repondreQuestion = new RepondreQuestion(envoyer, LblNiveau.Text);
             repondreQuestion.Hide();
             repondreQuestion.Show();
         }

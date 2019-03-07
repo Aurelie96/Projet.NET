@@ -35,6 +35,7 @@
             this.dgv_Objet = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgv_Question = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.LblNiveau = new System.Windows.Forms.Label();
             this.BtnRetour = new System.Windows.Forms.Button();
             this.BtnRafraichir = new System.Windows.Forms.Button();
             this.LblUser = new System.Windows.Forms.Label();
@@ -99,6 +100,7 @@
             // splitContainer1.Panel1
             // 
             this.splitContainer1.Panel1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.splitContainer1.Panel1.Controls.Add(this.LblNiveau);
             this.splitContainer1.Panel1.Controls.Add(this.BtnRetour);
             this.splitContainer1.Panel1.Controls.Add(this.BtnRafraichir);
             this.splitContainer1.Panel1.Controls.Add(this.LblUser);
@@ -111,6 +113,15 @@
             this.splitContainer1.Size = new System.Drawing.Size(1299, 594);
             this.splitContainer1.SplitterDistance = 71;
             this.splitContainer1.TabIndex = 2;
+            // 
+            // LblNiveau
+            // 
+            this.LblNiveau.AutoSize = true;
+            this.LblNiveau.Location = new System.Drawing.Point(698, 65);
+            this.LblNiveau.Name = "LblNiveau";
+            this.LblNiveau.Size = new System.Drawing.Size(0, 17);
+            this.LblNiveau.TabIndex = 6;
+            this.LblNiveau.Visible = false;
             // 
             // BtnRetour
             // 
@@ -175,6 +186,7 @@
             this.Controls.Add(this.splitContainer1);
             this.Name = "ForumTuteur";
             this.Text = "ForumTuteur";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_Forum)).EndInit();
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
@@ -196,5 +208,6 @@
         private System.Windows.Forms.Label LblUser;
         private System.Windows.Forms.Label LblMatiere;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label LblNiveau;
     }
 }

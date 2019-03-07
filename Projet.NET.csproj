@@ -135,6 +135,12 @@
     <Compile Include="View\ListMatiere.Designer.cs">
       <DependentUpon>ListMatiere.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\ListMatiereTuteur.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ListMatiereTuteur.Designer.cs">
+      <DependentUpon>ListMatiereTuteur.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\RepondreQuestion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -185,6 +191,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\ListMatiere.resx">
       <DependentUpon>ListMatiere.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ListMatiereTuteur.resx">
+      <DependentUpon>ListMatiereTuteur.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\RepondreQuestion.resx">
       <DependentUpon>RepondreQuestion.cs</DependentUpon>

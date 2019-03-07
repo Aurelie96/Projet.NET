@@ -125,6 +125,7 @@
             this.BtnRetour.TabIndex = 5;
             this.BtnRetour.Text = "Retour";
             this.BtnRetour.UseVisualStyleBackColor = true;
+            this.BtnRetour.Click += new System.EventHandler(this.BtnRetour_Click_1);
             // 
             // BtnRafraichir
             // 
@@ -137,6 +138,7 @@
             this.BtnRafraichir.TabIndex = 4;
             this.BtnRafraichir.Text = "Rafraichir";
             this.BtnRafraichir.UseVisualStyleBackColor = true;
+            this.BtnRafraichir.Click += new System.EventHandler(this.BtnRafraichir_Click);
             // 
             // LblUser
             // 
@@ -168,6 +170,7 @@
             this.btn_Question.TabIndex = 1;
             this.btn_Question.Text = "Question";
             this.btn_Question.UseVisualStyleBackColor = true;
+            this.btn_Question.Click += new System.EventHandler(this.btn_Question_Click);
             // 
             // label1
             // 
@@ -189,6 +192,7 @@
             this.Controls.Add(this.splitContainer1);
             this.Name = "ForumEleve";
             this.Text = "ForumEleve";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_Forum)).EndInit();
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();

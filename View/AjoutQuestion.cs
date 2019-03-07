@@ -39,7 +39,7 @@ namespace Projet.NET.View
                 
                 MessageBox.Show("Le message a bien été envoyé !");
                 ActiveForm.Close();
-                Forum forum = new Forum(use, LblMatiere.Text);
+                ForumEleve forum = new ForumEleve(use, LblMatiere.Text);
                 forum.ShowDialog();
             }
             else
@@ -53,7 +53,7 @@ namespace Projet.NET.View
         {
             Users user = new Users(Lbl_Login.Text);
             ActiveForm.Close();
-            Forum forum = new Forum(user, LblMatiere.Text);
+            ForumEleve forum = new ForumEleve(user, LblMatiere.Text);
             forum.Hide();
             forum.Show();
         }

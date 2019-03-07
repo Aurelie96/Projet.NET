@@ -41,6 +41,7 @@
             this.LblMatiere = new System.Windows.Forms.Label();
             this.btn_Question = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.lblNiveau = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_Forum)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -100,6 +101,7 @@
             // splitContainer1.Panel1
             // 
             this.splitContainer1.Panel1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.splitContainer1.Panel1.Controls.Add(this.lblNiveau);
             this.splitContainer1.Panel1.Controls.Add(this.BtnRetour);
             this.splitContainer1.Panel1.Controls.Add(this.BtnRafraichir);
             this.splitContainer1.Panel1.Controls.Add(this.LblUser);
@@ -184,6 +186,15 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Bienvenue sur le forum de ";
             // 
+            // lblNiveau
+            // 
+            this.lblNiveau.AutoSize = true;
+            this.lblNiveau.Location = new System.Drawing.Point(624, 49);
+            this.lblNiveau.Name = "lblNiveau";
+            this.lblNiveau.Size = new System.Drawing.Size(0, 17);
+            this.lblNiveau.TabIndex = 6;
+            this.lblNiveau.Visible = false;
+            // 
             // Forum
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -217,5 +228,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dgv_Objet;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgv_Question;
         private System.Windows.Forms.Button BtnRetour;
+        private System.Windows.Forms.Label lblNiveau;
     }
 }

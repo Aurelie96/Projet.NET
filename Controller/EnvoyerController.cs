@@ -51,7 +51,7 @@ namespace Projet.NET.Controleur
         }
         /*La méthode ChargerMessageParMatiere recoit deux int  
          et retourne le message de l'utilisateur par rapport a une matière*/
-        public static List<Envoyer> ChargerMessageParMatiere(int user, int matiere)
+        public static List<Envoyer> ChargerMessageParMatiere(int niveau, int matiere)
         {
             List<Envoyer> lesMessages = new List<Envoyer>();
             try
@@ -65,7 +65,7 @@ namespace Projet.NET.Controleur
                     "idUser, " +
                     "idMatiere, " +
                     "idNiveau from message " +
-                    $"WHERE idUser = '{user}' " +
+                    $"WHERE idNiveau = '{niveau}' " +
                     $"AND idMatiere = '{matiere}' ");
                 while (reader.Read())
                 {

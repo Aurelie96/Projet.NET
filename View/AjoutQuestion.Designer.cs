@@ -37,6 +37,7 @@
             this.LblMatiere = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.LblNiveau = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // TxtObjet
@@ -141,12 +142,22 @@
             this.label3.TabIndex = 9;
             this.label3.Text = "Question :";
             // 
+            // LblNiveau
+            // 
+            this.LblNiveau.AutoSize = true;
+            this.LblNiveau.Location = new System.Drawing.Point(621, 24);
+            this.LblNiveau.Name = "LblNiveau";
+            this.LblNiveau.Size = new System.Drawing.Size(0, 17);
+            this.LblNiveau.TabIndex = 10;
+            this.LblNiveau.Visible = false;
+            // 
             // AjoutQuestion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(1198, 695);
+            this.Controls.Add(this.LblNiveau);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -175,5 +186,6 @@
         private System.Windows.Forms.Button BtnAnnuler;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label LblNiveau;
     }
 }

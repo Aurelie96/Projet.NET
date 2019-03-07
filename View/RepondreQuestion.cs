@@ -14,9 +14,10 @@ namespace Projet.NET.View
 {
     public partial class RepondreQuestion : Form
     {
-        public RepondreQuestion(Envoyer envoyer)
+        public RepondreQuestion(Envoyer envoyer, string niveau)
         {
             InitializeComponent();
+            label4.Text = niveau;
             //Récupération de toute les réponses et remplir le dataGridView
             List<Repondre> LesReponses = RepondreController.ChargerRepondre(envoyer);
             for(int i = 0; i < LesReponses.Count(); i++)
@@ -43,7 +44,7 @@ namespace Projet.NET.View
                 Users users = UsersController.ChargerLoginUser(envoyer.idUser);
                 Matiere matiere = MatiereController.ChargerMatiereParIdMatiere(envoyer.idMatiere);
                 MessageBox.Show("Le message a bien été envoyé !");
-                Forum forum = new Forum(users, matiere.nomMatiere);
+                Forum forum = new Forum(users, matiere.nomMatiere, label4.Text);
                 ActiveForm.Close();
                 forum.ShowDialog();
             }
@@ -60,7 +61,7 @@ namespace Projet.NET.View
             envoyer = EnvoyerController.ChargerMessageParIdMessage(envoyer);
             Users users = UsersController.ChargerLoginUser(envoyer.idUser);
             Matiere matiere = MatiereController.ChargerMatiereParIdMatiere(envoyer.idMatiere);
-            Forum forum = new Forum(users, matiere.nomMatiere);
+            Forum forum = new Forum(users, matiere.nomMatiere, label4.Text);
             ActiveForm.Close();
             forum.ShowDialog();
         }

@@ -46,3 +46,4 @@ D:\Projet.NET\Projet.NET\obj\Debug\Projet.NET.View.ListMatiere.resources
 D:\Projet.NET\Projet.NET\obj\Debug\Projet.NET.View.ForumTuteur.resources
 D:\Projet.NET\Projet.NET\obj\Debug\Projet.NET.View.VoirReponse.resources
 D:\Projet.NET\Projet.NET\obj\Debug\Projet.NET.View.ForumEleve.resources
+D:\Projet.NET\Projet.NET\obj\Debug\Projet.NET.View.ListMatiereTuteur.resources
