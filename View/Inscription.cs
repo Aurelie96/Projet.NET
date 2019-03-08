@@ -46,22 +46,22 @@ namespace Projet.NET.View
                 UsersController.CreerUser(user);
                 if (user.eleveUser == 1 && user.tuteurUser == 0)
                 {
-                    ActiveForm.Close();
                     AccueilEleve accueil = new AccueilEleve(user);
+                    ActiveForm.Close();
                     accueil.Hide();
                     accueil.Show();
                 }
                 if (user.eleveUser == 0 && user.tuteurUser == 1)
                 {
-                    ActiveForm.Close();
                     AccueilTuteur accueil = new AccueilTuteur(user);
+                    ActiveForm.Close();
                     accueil.Hide();
                     accueil.Show();
                 }
                 if (user.eleveUser == 1 && user.tuteurUser == 1)
                 {
-                    ActiveForm.Close();
                     Accueil accueil = new Accueil(user);
+                    ActiveForm.Close();
                     accueil.Hide();
                     accueil.Show();
                 }

@@ -29,12 +29,11 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Dgv_Groupe = new System.Windows.Forms.DataGridView();
             this.dgv_GroupeNom = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lbl_niveau = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.lbl_login = new System.Windows.Forms.Label();
             this.btnRetour = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_Groupe)).BeginInit();
@@ -42,35 +41,31 @@
             // 
             // Dgv_Groupe
             // 
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Book Antiqua", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Dgv_Groupe.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.Dgv_Groupe.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Dgv_Groupe.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Book Antiqua", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Dgv_Groupe.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.Dgv_Groupe.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Dgv_Groupe.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dgv_GroupeNom});
-            this.Dgv_Groupe.Location = new System.Drawing.Point(19, 52);
+            this.Dgv_Groupe.Location = new System.Drawing.Point(28, 81);
+            this.Dgv_Groupe.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Dgv_Groupe.Name = "Dgv_Groupe";
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Dgv_Groupe.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.Dgv_Groupe.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Dgv_Groupe.RowTemplate.Height = 24;
-            this.Dgv_Groupe.Size = new System.Drawing.Size(926, 423);
+            this.Dgv_Groupe.Size = new System.Drawing.Size(1389, 661);
             this.Dgv_Groupe.TabIndex = 11;
             this.Dgv_Groupe.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgv_Groupe_CellContentClick);
             // 
             // dgv_GroupeNom
             // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Book Antiqua", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgv_GroupeNom.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgv_GroupeNom.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_GroupeNom.HeaderText = "Nom des groupes du forum";
             this.dgv_GroupeNom.Name = "dgv_GroupeNom";
             this.dgv_GroupeNom.ReadOnly = true;
@@ -79,36 +74,33 @@
             // lbl_niveau
             // 
             this.lbl_niveau.AutoSize = true;
-            this.lbl_niveau.Location = new System.Drawing.Point(721, 26);
+            this.lbl_niveau.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_niveau.Location = new System.Drawing.Point(1082, 41);
+            this.lbl_niveau.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_niveau.Name = "lbl_niveau";
-            this.lbl_niveau.Size = new System.Drawing.Size(0, 17);
+            this.lbl_niveau.Size = new System.Drawing.Size(0, 25);
             this.lbl_niveau.TabIndex = 13;
             this.lbl_niveau.Visible = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Book Antiqua", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(147, 40);
-            this.label1.TabIndex = 10;
-            this.label1.Text = "Bonjour ";
             // 
             // lbl_login
             // 
             this.lbl_login.AutoSize = true;
-            this.lbl_login.Font = new System.Drawing.Font("Book Antiqua", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_login.Location = new System.Drawing.Point(165, 9);
+            this.lbl_login.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_login.Location = new System.Drawing.Point(164, 14);
+            this.lbl_login.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_login.Name = "lbl_login";
-            this.lbl_login.Size = new System.Drawing.Size(0, 40);
+            this.lbl_login.Size = new System.Drawing.Size(0, 38);
             this.lbl_login.TabIndex = 12;
+            this.lbl_login.Visible = false;
             // 
             // btnRetour
             // 
-            this.btnRetour.Location = new System.Drawing.Point(845, 9);
+            this.btnRetour.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRetour.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRetour.Location = new System.Drawing.Point(1268, 14);
+            this.btnRetour.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnRetour.Name = "btnRetour";
-            this.btnRetour.Size = new System.Drawing.Size(100, 34);
+            this.btnRetour.Size = new System.Drawing.Size(150, 53);
             this.btnRetour.TabIndex = 14;
             this.btnRetour.Text = "Retour";
             this.btnRetour.UseVisualStyleBackColor = true;
@@ -116,14 +108,16 @@
             // 
             // ListMatiereTuteur
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(957, 487);
+            this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.ClientSize = new System.Drawing.Size(1436, 761);
             this.Controls.Add(this.btnRetour);
             this.Controls.Add(this.Dgv_Groupe);
             this.Controls.Add(this.lbl_niveau);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.lbl_login);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "ListMatiereTuteur";
             this.Text = "ListMatiereTuteur";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -138,7 +132,6 @@
         private System.Windows.Forms.DataGridView Dgv_Groupe;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgv_GroupeNom;
         private System.Windows.Forms.Label lbl_niveau;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lbl_login;
         private System.Windows.Forms.Button btnRetour;
     }

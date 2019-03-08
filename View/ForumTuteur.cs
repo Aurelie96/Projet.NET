@@ -28,6 +28,7 @@ namespace Projet.NET.View
             LblNiveau.Text = nomNiveaux;
             LblMatiere.Text = nomMatiere;
             LblUser.Text = user.loginUser;
+            label1.Text = "Bienvenue sur le forum de  " + nomMatiere;
             Dgv_Forum.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
             Dgv_Forum.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
         }
@@ -53,8 +54,8 @@ namespace Projet.NET.View
         private void BtnRetour_Click(object sender, EventArgs e)
         {
             Users users = new Users(LblUser.Text);
+            ListMatiere accueil = new ListMatiere(users, LblNiveau.Text);
             ActiveForm.Close();
-            AccueilTuteur accueil = new AccueilTuteur(users);
             accueil.Hide();
             accueil.Show();
         }
@@ -65,9 +66,9 @@ namespace Projet.NET.View
             string objetMessage = Convert.ToString(lineSelected.Cells[0].Value);
             string texteMessage = Convert.ToString(lineSelected.Cells[1].Value);
             Envoyer envoyer = EnvoyerController.ChargerMessage(objetMessage, texteMessage);
-
+            
+            RepondreQuestionTuteur repondreQuestion = new RepondreQuestionTuteur(envoyer, LblNiveau.Text);
             ActiveForm.Close();
-            RepondreQuestion repondreQuestion = new RepondreQuestion(envoyer, LblNiveau.Text);
             repondreQuestion.Hide();
             repondreQuestion.Show();
         }

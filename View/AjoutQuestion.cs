@@ -38,9 +38,10 @@ namespace Projet.NET.View
             {
                 
                 MessageBox.Show("Le message a bien été envoyé !");
-                ActiveForm.Close();
                 ForumEleve forum = new ForumEleve(use, LblMatiere.Text);
-                forum.ShowDialog();
+                ActiveForm.Close();
+                forum.Hide();
+                forum.Show();
             }
             else
             {
@@ -52,8 +53,8 @@ namespace Projet.NET.View
         private void BtnAnnuler_Click(object sender, EventArgs e)
         {
             Users user = new Users(Lbl_Login.Text);
-            ActiveForm.Close();
             ForumEleve forum = new ForumEleve(user, LblMatiere.Text);
+            ActiveForm.Close();
             forum.Hide();
             forum.Show();
         }

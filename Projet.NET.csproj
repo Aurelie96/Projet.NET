@@ -147,6 +147,12 @@
     <Compile Include="View\RepondreQuestion.Designer.cs">
       <DependentUpon>RepondreQuestion.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\RepondreQuestionTuteur.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\RepondreQuestionTuteur.Designer.cs">
+      <DependentUpon>RepondreQuestionTuteur.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\VoirReponse.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -197,6 +203,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\RepondreQuestion.resx">
       <DependentUpon>RepondreQuestion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\RepondreQuestionTuteur.resx">
+      <DependentUpon>RepondreQuestionTuteur.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\VoirReponse.resx">
       <DependentUpon>VoirReponse.cs</DependentUpon>

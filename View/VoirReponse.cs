@@ -37,7 +37,8 @@ namespace Projet.NET.View
             Matiere matiere = MatiereController.ChargerMatiereParIdMatiere(envoyer.idMatiere);
             ForumEleve forum = new ForumEleve(users, matiere.nomMatiere);
             ActiveForm.Close();
-            forum.ShowDialog();
+            forum.Hide();
+            forum.Show();
         }
     }
 }

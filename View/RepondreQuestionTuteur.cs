@@ -12,15 +12,15 @@ using System.Windows.Forms;
 
 namespace Projet.NET.View
 {
-    public partial class RepondreQuestion : Form
+    public partial class RepondreQuestionTuteur : Form
     {
-        public RepondreQuestion(Envoyer envoyer, string niveau)
+        public RepondreQuestionTuteur(Envoyer envoyer, string niveau)
         {
             InitializeComponent();
             label4.Text = niveau;
             //Récupération de toute les réponses et remplir le dataGridView
             List<Repondre> LesReponses = RepondreController.ChargerRepondre(envoyer);
-            for(int i = 0; i < LesReponses.Count(); i++)
+            for (int i = 0; i < LesReponses.Count(); i++)
             {
                 Console.Write(i);
                 Dgv_Repondre.Rows.Add(LesReponses[i].idReponse, LesReponses[i].texteReponse);
@@ -37,14 +37,14 @@ namespace Projet.NET.View
         {
             Repondre repondre = new Repondre(TxtReponse.Text, int.Parse(LblIdMessage.Text));
             bool i = RepondreController.CreerReponse(repondre);
-            if(i == true)
+            if (i == true)
             {
                 Envoyer envoyer = new Envoyer(int.Parse(LblIdMessage.Text));
                 envoyer = EnvoyerController.ChargerMessageParIdMessage(envoyer);
                 Users users = UsersController.ChargerLoginUser(envoyer.idUser);
                 Matiere matiere = MatiereController.ChargerMatiereParIdMatiere(envoyer.idMatiere);
                 MessageBox.Show("Le message a bien été envoyé !");
-                Forum forum = new Forum(users, matiere.nomMatiere, label4.Text);
+                ForumTuteur forum = new ForumTuteur(users, matiere.nomMatiere, label4.Text);
                 ActiveForm.Close();
                 forum.Hide();
                 forum.Show();
@@ -62,7 +62,7 @@ namespace Projet.NET.View
             envoyer = EnvoyerController.ChargerMessageParIdMessage(envoyer);
             Users users = UsersController.ChargerLoginUser(envoyer.idUser);
             Matiere matiere = MatiereController.ChargerMatiereParIdMatiere(envoyer.idMatiere);
-            Forum forum = new Forum(users, matiere.nomMatiere, label4.Text);
+            ForumTuteur forum = new ForumTuteur(users, matiere.nomMatiere, label4.Text);
             ActiveForm.Close();
             forum.Hide();
             forum.Show();

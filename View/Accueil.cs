@@ -19,6 +19,7 @@ namespace Projet.NET.View
             InitializeComponent();
             Connexion connexion = new Connexion();
             connexion.Close();
+            label1.Text = "Bonjour " + user.loginUser;
             lbl_login.Text = user.loginUser;
             List<Niveaux> LesNiveaux = NiveauxController.ChargerNiveaux();
             for (int i = 0; i < LesNiveaux.Count(); i++)
@@ -36,8 +37,8 @@ namespace Projet.NET.View
             DataGridViewRow lineSelected = Dgv_Niveaux.Rows[Dgv_Niveaux.SelectedCells[0].RowIndex];
             string nomNiveau = Convert.ToString(lineSelected.Cells[0].Value);
             Niveaux niveau = new Niveaux(Dgv_Niveaux.SelectedRows.ToString());
-            ActiveForm.Close();
             ListMatiereTuteur forum = new ListMatiereTuteur(user, nomNiveau);
+            ActiveForm.Close();
             forum.Hide();
             forum.Show();
         }

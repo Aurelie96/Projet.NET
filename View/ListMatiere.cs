@@ -46,7 +46,7 @@ namespace Projet.NET.View
         private void btnRetour_Click(object sender, EventArgs e)
         {
             Users users = new Users(lbl_login.Text);
-            Accueil accueil = new Accueil(users);
+            AccueilTuteur accueil = new AccueilTuteur(users);
             ActiveForm.Close();
             accueil.Hide();
             accueil.Show();
